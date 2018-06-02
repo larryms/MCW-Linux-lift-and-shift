@@ -1,10 +1,17 @@
 ![](images/HeaderPic.png "Microsoft Cloud Workshops")
 
-# Linux lift and shift
+<div class="MCWHeader1">
+Linux lift and shift
+</div>
 
-## Whiteboard design session trainer guide
+<div class="MCWHeader2">
+ Whiteboard design session trainer guide
+</div>
 
-## March 2018
+<div class="MCWHeader3">
+March 2018
+</div>
+
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
@@ -15,35 +22,31 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
-## Contents 
+**Contents** 
 
 <!-- TOC -->
 
-- [Linux lift and shift](#linux-lift-and-shift)
-    - [Whiteboard design session trainer guide](#whiteboard-design-session-trainer-guide)
-    - [March 2018](#march-2018)
-    - [Contents](#contents)
-    - [Trainer information](#trainer-information)
-        - [Role of the trainer](#role-of-the-trainer)
-        - [Whiteboard design session flow](#whiteboard-design-session-flow)
-        - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session--how-to-prepare)
-        - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session--tips-for-an-effective-whiteboard-design-session)
+- [Trainer information](#trainer-information)
+    - [Role of the trainer](#role-of-the-trainer)
+    - [Whiteboard design session flow](#whiteboard-design-session-flow)
+    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Linux lift and shift whiteboard design session student guide](#linux-lift-and-shift-whiteboard-design-session-student-guide)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
-        - [Facilitator/subject matter expert (SME) presentation of customer case study](#facilitator-subject-matter-expert-sme-presentation-of-customer-case-study)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+        - [Customer situation](#customer-situation)
         - [Customer needs](#customer-needs)
         - [Customer objections](#customer-objections)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3-present-the-solution)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 - [Linux lift and shift whiteboard design session trainer guide](#linux-lift-and-shift-whiteboard-design-session-trainer-guide)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
-    - [Wrap-up](#wrap-up)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
+    - [Step 3: Present the solution](#step-3-present-the-solution-1)
+    - [Wrap-up](#wrap-up-1)
     - [Preferred target audience](#preferred-target-audience)
     - [Preferred solution](#preferred-solution)
     - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
@@ -51,11 +54,11 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- /TOC -->
 
-## Trainer information
+# Trainer information
 
 Thank you for taking time to support the whiteboard design sessions as a trainer!
 
-### Role of the trainer
+## Role of the trainer
 
 An amazing trainer:
 
@@ -79,7 +82,7 @@ An amazing trainer:
 
 -   Effectively leads the feedback process.
 
-### Whiteboard design session flow 
+## Whiteboard design session flow 
 
 Each whiteboard design session uses the following flow:
 
@@ -119,7 +122,7 @@ Outcome: Present solution to your customer
 
 -   Review preferred solution
 
-### Before the whiteboard design session: How to prepare
+## Before the whiteboard design session: How to prepare
 
 Before conducting your first whiteboard design session:
 
@@ -133,7 +136,7 @@ Before conducting your first whiteboard design session:
 
 -   Make notes for later.
 
-### During the whiteboard design session: Tips for an effective whiteboard design session
+## During the whiteboard design session: Tips for an effective whiteboard design session
 
 **Refer to the Trainer guide** to stay on track and observe the timings.
 
@@ -147,7 +150,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 -   **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
 
-***Have fun**! Encourage participants to have fun and share!*
+**Have fun**! Encourage participants to have fun and share!
 
 **Involve your participants.** Talk and share your knowledge but always involve your participants, even while you are the one speaking.
 
@@ -157,7 +160,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Wait for responses**. If you ask a question such as, "What is your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
-#  Linux lift and shift whiteboard design session student guide
+# Linux lift and shift whiteboard design session student guide
 
 ## Abstract and learning objectives 
 
@@ -173,23 +176,16 @@ In this whiteboard design session, attendees will learn how to migrate an existi
 
 ## Step 1: Review the customer case study 
 
-**Outcome**
+**Outcome** 
 
-Analyze your customer's needs.
+Analyze your customer’s needs.
+Time frame: 15 minutes 
+Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+1.  Meet your table participants and trainer 
+2.  Read all of the directions for steps 1–3 in the student guide 
+3.  As a table team, review the following customer case study
 
-### Facilitator/subject matter expert (SME) presentation of customer case study 
-
-Timeframe: 15 minutes
-
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
-
-1.  Meet your table participants and trainer.
-
-2.  Read all the directions for Steps 1--3 in the student guide.
-
-3.  As a table team, review the following customer case study.
-
-Customer situation
+### Customer situation
 
 Fabrikam Global Manufacturing & Operations Corporation (FGMO), based in Japan, provides product design, manufacturing, and repair services of domestic individual or industrial electronics, as well as global support for their customers. To avoid any impact from restructured support operations, executives decided to migrate on-premises customer support systems into Microsoft Azure. The hope is that running Linux VMs on Azure should enable FGMO to lower costs while sustaining or even increasing availability of the application.
 
@@ -259,24 +255,21 @@ Azure App Service
 
 ![The Azure App Service diagram begins wtih the internet, which points to both Azure Active Directory and App Service app, using Authentication. A Resource group encompasses an App Service Plan and an Azure SQL Database. The App Service Plan is made up of multiple App Service apps, and the Azure SQL Database encompasses A logical SQL server, and two SQL databases.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image5.png "Azure App Service diagram")
 
+
 ## Step 2: Design a proof of concept solution
 
-**Outcome**
+**Outcome** 
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Design a solution and prepare to present a solution to the target customer audience in a 15-minute chalk-talk format.
-
-Timeframe: 60 minutes
+Time frame: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart.
-
-1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
-
+Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
+1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
 2.  What customer business needs do you need to address with your solution?
 
-**Design**
-
+**Design** 
 Directions: With all participants at your table, respond to the following questions on a flip chart.
 
 *Migration Phases*:
@@ -307,45 +300,37 @@ Directions: With all participants at your table, respond to the following questi
 
 **Prepare**
 
-Directions: With all participants at your table:
+Directions: With all participants at your table: 
 
-1.  Identify any customer needs that are not addressed with the proposed solution.
+1.  Identify any customer needs that are not addressed with the proposed solution. 
+2.  Identify the benefits of your solution. 
+3.  Determine how you will respond to the customer’s objections. 
 
-2.  Identify the benefits of your solution.
-
-3.  Determine how you will respond to the customer's objections.
-
-Prepare a 15-minute chalk-talk style presentation to the customer.
+Prepare a 15-minute chalk-talk style presentation to the customer. 
 
 ## Step 3: Present the solution
 
 **Outcome**
-
+ 
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-**Presentation**
+Time frame: 30 minutes
 
-Timeframe: 30 minutes
+**Presentation** 
 
-**Directions**
-
+Directions:
 1.  Pair with another table.
-
 2.  One table is the Microsoft team and the other table is the customer.
-
 3.  The Microsoft team presents their proposed solution to the customer.
-
 4.  The customer makes one of the objections from the list of objections.
-
 5.  The Microsoft team responds to the objection.
+6.  The customer team gives feedback to the Microsoft team. 
+7.  Tables switch roles and repeat Steps 2–6.
 
-6.  The customer team gives feedback to the Microsoft team.
-
-7.  Tables switch roles and repeat Steps 2--6. 
 
 ## Wrap-up
 
-Timeframe: 15 minutes
+Time frame: 15 minutes
 
 -   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
 
