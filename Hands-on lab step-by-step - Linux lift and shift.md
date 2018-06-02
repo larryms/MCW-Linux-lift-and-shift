@@ -27,23 +27,20 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Overview](#overview)
     - [Requirements](#requirements)
     - [Help References](#help-references)
-    - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Create a virtual machine to execute the lab](#task-1--create-a-virtual-machine-to-execute-the-lab)
-        - [Task 2: Install the MySQL Workbench](#task-2--install-the-mysql-workbench)
-    - [Exercise 1: Deploy the on-premises OsTicket VM application](#exercise-1--deploy-the-on-premises-osticket-vm-application)
-        - [Task 1: Deploy the OnPremVM](#task-1--deploy-the-onpremvm)
-        - [Task 2: Export the osticket database](#task-2--export-the-osticket-database)
-    - [Exercise 2: Migrate to Azure IaaS VM Scale Sets and MySQL cluster](#exercise-2--migrate-to-azure-iaas-vm-scale-sets-and-mysql-cluster)
-        - [Task 1: Deploy the MySQL HA cluster](#task-1--deploy-the-mysql-ha-cluster)
-        - [Task 2: Connect to the MySQL cluster and restore the database](#task-2--connect-to-the-mysql-cluster-and-restore-the-database)
-        - [Task 3: Deploy the Virtual Machine Scale Set for the OsTicket Application](#task-3--deploy-the-virtual-machine-scale-set-for-the-osticket-application)
-        - [Task 4: Connect the MySQLVNet to the Scale Sets VNet](#task-4--connect-the-mysqlvnet-to-the-scale-sets-vnet)
-        - [Task 5: Export the osticket database from the MySQL cluster](#task-5--export-the-osticket-database-from-the-mysql-cluster)
-    - [Exercise 3: Migrate the OsTicket application from Azure IaaS to PaaS](#exercise-3--migrate-the-osticket-application-from-azure-iaas-to-paas)
-        - [Task 1: Create the MySQL database](#task-1--create-the-mysql-database)
-        - [Task 2: Restore the osticket database to MySQL PaaS](#task-2--restore-the-osticket-database-to-mysql-paas)
-        - [Task 3: Create the Web App](#task-3--create-the-web-app)
-        - [Task 4: Configure the OsTicket Web App](#task-4--configure-the-osticket-web-app)
+    - [Exercise 1: Deploy the on-premises OsTicket VM application](#exercise-1-deploy-the-on-premises-osticket-vm-application)
+        - [Task 1: Deploy the OnPremVM](#task-1-deploy-the-onpremvm)
+        - [Task 2: Export the osticket database](#task-2-export-the-osticket-database)
+    - [Exercise 2: Migrate to Azure IaaS VM Scale Sets and MySQL cluster](#exercise-2-migrate-to-azure-iaas-vm-scale-sets-and-mysql-cluster)
+        - [Task 1: Deploy the MySQL HA cluster](#task-1-deploy-the-mysql-ha-cluster)
+        - [Task 2: Connect to the MySQL cluster and restore the database](#task-2-connect-to-the-mysql-cluster-and-restore-the-database)
+        - [Task 3: Deploy the Virtual Machine Scale Set for the OsTicket Application](#task-3-deploy-the-virtual-machine-scale-set-for-the-osticket-application)
+        - [Task 4: Connect the MySQLVNet to the Scale Sets VNet](#task-4-connect-the-mysqlvnet-to-the-scale-sets-vnet)
+        - [Task 5: Export the osticket database from the MySQL cluster](#task-5-export-the-osticket-database-from-the-mysql-cluster)
+    - [Exercise 3: Migrate the OsTicket application from Azure IaaS to PaaS](#exercise-3-migrate-the-osticket-application-from-azure-iaas-to-paas)
+        - [Task 1: Create the MySQL database](#task-1-create-the-mysql-database)
+        - [Task 2: Restore the osticket database to MySQL PaaS](#task-2-restore-the-osticket-database-to-mysql-paas)
+        - [Task 3: Create the Web App](#task-3-create-the-web-app)
+        - [Task 4: Configure the OsTicket Web App](#task-4-configure-the-osticket-web-app)
     - [After the hands-on lab](#after-the-hands-on-lab)
 
 <!-- /TOC -->
@@ -88,113 +85,6 @@ You must have a working Azure subscription to carry out this hands-on Lab step-b
 | App Service for Linux | <https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-intro/> |
 | Azure CLI | <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli/> |
 
-## Before the hands-on lab
-
-Duration: 30 Minutes
-
-### Task 1: Create a virtual machine to execute the lab
-
-1.  Launch a browser and navigate to <https://portal.azure.com>. Once prompted, login with your Microsoft Azure credentials. If prompted, choose whether your account is an organization account or just a Microsoft Account.
-
-2.  Click on **+NEW**, and in the search box type in **Visual Studio Community 2017 on Windows Server 2016 (x64)** and press enter. Click the Visual Studio Community 2017 image running on Windows Server 2016 and with the latest update.
-
-3.  In the returned search results, click the image name.
-
-    ![In the Everything blade, the search field displays Visual Studio Community 2017 on Windows Server 2016 (x64). Under Results, Visual Studio Community 2017 on Windows Server 2016 (x64) is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image5.png "Everything blade")
-
-4.  Click **Create**.
-
-5.  Set the following configuration on the Basics tab and click **OK**.
-
-    -   Name: **LABVM**
-
-    -   VM disk type: **SSD**
-
-    -   User name: **demouser**
-
-    -   Password: **demo\@pass123**
-
-    -   Subscription: **If you have multiple subscriptions choose the subscription to execute your labs in.**
-
-    -   Resource Group: **OPSLABRG**
-
-    -   Location: **Choose the closest Azure region to you.**
-
-    ![Fields in the Basics blade display with the previously defined settings.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image6.png "Basics blade")
-
-6.  Choose the **DS1\_V2 Standard** instance size on the Size blade.
-
-**Note**: You may have to click the View All link to see the instance sizes.
-
-![In the Choose a size blade, the DS1\_V2 Standard option is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image7.png "Choose a size blade")
-
-**Note**: If the Azure Subscription you are using is [NOT]{.underline} a trial Azure subscription you may want to chose the DS2\_V2 to have more power in this LABMV. If you are using a Trial Subscription or one that you know has a restriction on the number of cores stick with the DS1\_V2.
-
-7.  Click **Storage Account** *Configure required settings* to specify a storage account for your virtual machine if a storage account name is not automatically selected for you.
-
-    ![In the Settings blade, the Storage account option is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image8.png "Settings blade")
-
-8.  Click **Create New**
-
-    ![Screenshot of the Create new button.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image9.png "Create new button")
-
-9.  Specify a unique name for the storage account (all lower letters and alphanumeric characters) and ensure the green checkmark shows the name is valid.
-
-    ![Next to the Name field, the Green checkmark icon is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image10.png "Green checkmark icon")
-
-10. Click **OK** to continue.
-
-11. Click **Diagnostics Storage Account** *Configure required settings* for the Diagnostics storage account if a storage account name is not automatically selected for you. Repeat the previous steps to select a unique storage account name. This storage account will hold diagnostic logs about your virtual machine that you can use for troubleshooting purposes.
-
-    ![Screenshot of the Diagnostics Storage Account option.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image11.png "Diagnostics Storage Account option")
-
-12. Accept the remaining default values on the Settings blade and click **OK**. On the Summary page click **Create**. The deployment should begin provisioning. It may take 10+ minutes for the virtual machine to complete provisioning.
-
-    ![Screenshot of the Deploying Visual Studio icon.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image12.png "Deploying Visual Studio icon")
-
-**Note**: Please wait for the LABVM to be provisioned prior to moving to the next step.
-
-13. Move back to the Portal page on your local machine and wait for **LABVM** to show the Status of **Running**. Click **Connect** to establish a new Remote Desktop Session.
-
-    ![The Connect button is selected on the Portal page top menu.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image13.png "Portal page top menu")
-
-14. Depending on your remote desktop protocol client and browser configuration you will either be prompted to open an RDP file, or you will need to download it and then open it separately to connect.
-
-15. Log in with the credentials specified during creation:
-
-    a.  User: **demouser**
-
-    b.  Password: **demo\@pass123**
-
-16. You will be presented with a Remote Desktop Connection warning because of a certificate trust issue. Click **Yes** to continue with the connection.
-
-    ![The Remote Desktop Connection dialog box displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image14.png "Remote Desktop Connection dialog box")
-
-17. When logging on for the first time you will see a prompt on the right asking about network discovery. Click **No**.
-
-    ![A Network Diagnostics prompt displays, asking if you want to find PCs, devices, and content on this network and automatically connect.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image15.png "Network Diagnostics prompt")
-
-18. Notice that Server Manager opens by default. On the left, click **Local Server**.
-
-    ![On the Server Manager menu, Local Server is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image16.png "Server Manager menu")
-
-19. On the right side of the pane, click **On** by **IE Enhanced Security Configuration**.
-
-    ![In the Essentials section, IE Enhanced Security Configuration is selected, and set to On.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image17.png "Essentials section")
-
-20. Change to **Off** for Administrators and click **OK**.
-
-    ![In the Internet Explorer Enhanced Security Configuration dialog box, Administrators is set to Off.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image18.png "Internet Explorer Enhanced Security Configuration dialog box")
-
-### Task 2: Install the MySQL Workbench
-
-1.  While logged into **LABVM** via remote desktop, open Internet Explorer and navigate to <https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.10-winx64.msi> this will download an executable. After the download is finished, click **Run** to execute it.
-
-2.  Follow the directions of the installer to complete the installation of MySQL Workbench.
-
-3.  After the installation is complete, **reboot** the machine.
-
-You should follow all steps provided *before* attending the Hands-on lab.
 
 ## Exercise 1: Deploy the on-premises OsTicket VM application
 

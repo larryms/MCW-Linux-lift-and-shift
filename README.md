@@ -1,3 +1,26 @@
+# Abstract
+
+## Workshop
+
+In this Step-by-step Microsoft Cloud Workshop, you will migrate a Linux based application to the Azure Cloud. This will include the use of Azure IaaS Virtual Machines and Virtual Machine Scale Sets. Azure PaaS will also be leveraged including: Azure App Services (Web App), and Azure Database for MySQL. The attendee will leverage Azure Resource Manager templates, the Linux custom script extension, Github and a Linux Docker Container in the App Service.
+
+
+
+## Whiteboard Design Session
+TBD
+
+## Hand-on Lab
+TBD
+
+
+## Azure services and related products
+- Azure VMs
+- Azure Portal
+- Azure CLI
+- Azure App Services on Linux
+- Azure Database for MySQL
+- Azure Resource Manager Templates
+
 
 # Contributing
 
