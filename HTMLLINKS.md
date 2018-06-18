@@ -1,11 +1,11 @@
 ﻿# HTML Files for Workshop
-[Hands-on lab step-by-step - Linux lift and shift.html](https://cloudworkshop.blob.core.windows.net/linux-lift-shift/Hands-on%20lab%20step-by-step%20-%20Linux%20lift%20and%20shift.html)
+[WDS student guide - Linux lift and shift.html](https://cloudworkshop.blob.core.windows.net/linux-lift-shift/Whiteboard%20design%20session/WDS%20student%20guide%20-%20Linux%20lift%20and%20shift.html)
 
-[Hands-on lab unguided - Linux lift and shift.html](https://cloudworkshop.blob.core.windows.net/linux-lift-shift/Hands-on%20lab%20unguided%20-%20Linux%20lift%20and%20shift.html)
+[WDS trainer guide - Linux lift and shift.html](https://cloudworkshop.blob.core.windows.net/linux-lift-shift/Whiteboard%20design%20session/WDS%20trainer%20guide%20-%20Linux%20lift%20and%20shift.html)
 
-[Setup.html](https://cloudworkshop.blob.core.windows.net/linux-lift-shift/Setup.html)
+[Before the lab.html](https://cloudworkshop.blob.core.windows.net/linux-lift-shift/Hands-on%20lab/Before%20the%20lab.html)
 
-[Whiteboard design session student guide - Linux lift and shift.html](https://cloudworkshop.blob.core.windows.net/linux-lift-shift/Whiteboard%20design%20session%20student%20guide%20-%20Linux%20lift%20and%20shift.html)
+[HOL step-by-step - Linux lift and shift.html](https://cloudworkshop.blob.core.windows.net/linux-lift-shift/Hands-on%20lab/HOL%20step-by-step%20-%20Linux%20lift%20and%20shift.html)
 
-[Whiteboard design session trainer guide - Linux lift and shift.html](https://cloudworkshop.blob.core.windows.net/linux-lift-shift/Whiteboard%20design%20session%20trainer%20guide%20-%20Linux%20lift%20and%20shift.html)
+[HOL unguided - Linux lift and shift.html](https://cloudworkshop.blob.core.windows.net/linux-lift-shift/Hands-on%20lab/HOL%20unguided%20-%20Linux%20lift%20and%20shift.html)
 
