@@ -61,7 +61,9 @@ In this whiteboard design session, attendees will learn how to migrate an existi
 **Outcome** 
 
 Analyze your customer’s needs.
-Time frame: 15 minutes 
+
+Timeframe: 15 minutes 
+
 Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
 1.  Meet your table participants and trainer 
 2.  Read all of the directions for steps 1–3 in the student guide 
@@ -78,17 +80,17 @@ To ensure a smooth migration to the cloud, FGMO turned to A. Datum, Inc., a solu
 
 The following objectives were put in place:
 
--   Migrate customer support systems from on-premises to Azure and achieve cost reduction without lowering the quality-level of Fabrikam support operations.
+-   Migrate customer support systems from on-premises to Azure and achieve cost reduction without lowering the quality-level of Fabrikam support operations
 
--   With Azure Linux support, leverage infrastructure as a service (IaaS) or platform as a service (PaaS) approaches for an on-schedule, agile migration to the cloud.
+-   With Azure Linux support, leverage infrastructure as a service (IaaS) or platform as a service (PaaS) approaches for an on-schedule, agile migration to the cloud
 
--   Implement Azure ExpressRoute and its highly secured connection to migrate systems that had proven difficult to migrate to the cloud previously.
+-   Implement Azure ExpressRoute and its highly secured connection to migrate systems that had proven difficult to migrate to the cloud previously
 
 After completing a cloud readiness assessment of the application for Fabrikam, A. Datum has gathered the following information:
 
--   Helpdesk software is deployed on a single VM running a traditional LAMP stack (Linux, Apache, MySQL & PHP).
+-   Helpdesk software is deployed on a single VM running a traditional LAMP stack (Linux, Apache, MySQL & PHP)
 
--   Linux Ubuntu 16.04, Apache 2, MySQL 5.6 (100GB DB), and PHP 7.0 are the current versions.
+-   Linux Ubuntu 16.04, Apache 2, MySQL 5.6 (100GB DB), and PHP 7.0 are the current versions
 
 -   The VM is hosted on a VMWare infrastructure using 8vCPUs and 16GB of RAM. When asked about why the applications required 8vCPUs, the FGMO team stated that during busy periods the server can get overloaded. They decided to scale up the VM to handle the load when needed.
 
@@ -100,13 +102,13 @@ After completing a cloud readiness assessment of the application for Fabrikam, A
 
 ### Customer needs
 
-1.  Migrate their existing support application to Microsoft Azure with minimal changes and minimal disruption to their service.
+1.  Migrate their existing support application to Microsoft Azure with minimal changes and minimal disruption to their service
 
-2.  Ensure that the Linux instances deployed in Azure are configured for high availability, cost optimization, performance and best practices.
+2.  Ensure that the Linux instances deployed in Azure are configured for high availability, cost optimization, performance and best practices
 
-3.  Establish connectivity between their on-premises environment and the virtual network where the support application is deployed.
+3.  Establish connectivity between their on-premises environment and the virtual network where the support application is deployed
 
-4.  Configure monitoring for the support application to ensure that if an issue comes up that the support team is alerted, and a maintenance script is executed to mitigate known issues.
+4.  Configure monitoring for the support application to ensure that if an issue comes up that the support team is alerted, and a maintenance script is executed to mitigate known issues
 
 5.  Ensure that only administrators of the support application will have access to the new infrastructure. It is important that any security methodologies and accounts leverage their current Active Directory Domain Services installation in the current datacenter.
 
@@ -118,7 +120,7 @@ After completing a cloud readiness assessment of the application for Fabrikam, A
 
 2.  FGMO's data needs to be encrypted at rest and in transit. The current system is not configured in this manor, but when moving to the cloud they need to ensure their clients privacy.
 
-3.  There should be no single point of failure in the system once it is in the cloud.
+3.  There should be no single point of failure in the system once it is in the cloud
 
 4.  This is a mission critical system and FGMO needs to be sure that they have SLAs from the cloud provider. This SLA should be no less than 99.9%.
 
@@ -141,9 +143,10 @@ Azure App Service
 ## Step 2: Design a proof of concept solution
 
 **Outcome** 
+
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Time frame: 60 minutes
+Timeframe: 60 minutes
 
 **Business needs**
 
@@ -154,22 +157,21 @@ Directions: With all participants at your table, answer the following questions 
 **Design** 
 Directions: With all participants at your table, respond to the following questions on a flip chart.
 
-
 *Migration Phases*:
 
 1.  Provide a high-level diagram for the two phases of the migration of the FGMO helpdesk application to Azure. The first phase should use an IaaS approach followed by the second leveraging PaaS technologies.
 
-2.  For each phase capture the following aspects of the Lift & Shift:
+2.  For each phase capture the following aspects of the lift & shift:
 
     -   How will the database be migrated to Azure?
 
     -   How will the App and Data tiers be split and secured?
 
-    -   Insure that the designs are built for high availability, cost optimization, performance and using best practices.
+    -   Insure that the designs are built for high availability, cost optimization, performance and using best practices
 
-3.  Describe how you will leverage Azure access control methods to ensure that only administrators of the support application will have access to the new infrastructure.
+    -   Describe how you will leverage Azure access control methods to ensure that only administrators of the support application will have access to the new infrastructure
 
-4.  Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues.
+    -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues
 
 *Network Design*:
 
@@ -179,18 +181,17 @@ Directions: With all participants at your table, respond to the following questi
 
 *Customer Objections*:
 
-1.  Provide details on how your will address each of the objections that were put forward by the client.
-
+1.  Provide details on how your will address each of the objections that were put forward by the client
 
 **Prepare**
 
 Directions: With all participants at your table: 
 
-1.  Identify any customer needs that are not addressed with the proposed solution. 
-2.  Identify the benefits of your solution. 
-3.  Determine how you will respond to the customer’s objections. 
+1.  Identify any customer needs that are not addressed with the proposed solution.
+2.  Identify the benefits of your solution.
+3.  Determine how you will respond to the customer’s objections 
 
-Prepare a 15-minute chalk-talk style presentation to the customer. 
+Prepare a 15-minute chalk-talk style presentation to the customer.
 
 ## Step 3: Present the solution
 
@@ -198,25 +199,25 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
  
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 30 minutes
+Timeframe: 30 minutes
 
 **Presentation** 
 
 Directions:
-1.  Pair with another table.
-2.  One table is the Microsoft team and the other table is the customer.
-3.  The Microsoft team presents their proposed solution to the customer.
-4.  The customer makes one of the objections from the list of objections.
-5.  The Microsoft team responds to the objection.
-6.  The customer team gives feedback to the Microsoft team. 
-7.  Tables switch roles and repeat Steps 2–6.
+1.  Pair with another table
+2.  One table is the Microsoft team and the other table is the customer
+3.  The Microsoft team presents their proposed solution to the customer
+4.  The customer makes one of the objections from the list of objections
+5.  The Microsoft team responds to the objection
+6.  The customer team gives feedback to the Microsoft team 
+7.  Tables switch roles and repeat Steps 2–6
 
 
 ## Wrap-up
 
-Time frame: 15 minutes
+Timeframe: 15 minutes
 
--   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
+Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ##  Additional references
 
