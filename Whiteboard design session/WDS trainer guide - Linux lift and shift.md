@@ -300,7 +300,7 @@ Directions: With all participants at your table, respond to the following questi
 
 *Customer Objections*:
 
-1.  Provide details on how your will address each of the objections that were put forward by the client.
+1.  Provide details on how your will address each of the objections that were put forward by the client
 
 **Prepare**
 
@@ -510,7 +510,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   The ExpressRoute connection will be retained for Phase II of the migration. The public peering will be leveraged to connect directly to the Azure App Service Web App from on-premises by the FGMO support team.
 
-    -   The OsTicketVNET and MySQLVNET will be retired after the migration to PaaS.
+    -   The OsTicketVNET and MySQLVNET will be retired after the migration to PaaS
 
 ![Diagram of the Phase 2 - Networking preferred solution. At this time, we are unable to capture all of the information in the diagram. Future versions of this course should address this.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image9.png "Phase 2 - Networking preferred solution")
 
