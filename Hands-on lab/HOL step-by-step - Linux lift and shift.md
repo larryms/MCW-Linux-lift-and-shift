@@ -370,7 +370,7 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
     ![On the Default Schema to be Imported To page, the Default Target Schema is set to osticket.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image57.png "Default Schema to be Imported To")
 
-16. Once the restore is completed, the following screen will appear
+16. Once the restore is completed, the following screen will appear:
 
     ![On the MySQL Cluster Data Import page, on the Import Progress tab, status shows as import completed.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image58.png "MySQL Cluster Data Import page")
 
