@@ -504,7 +504,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
         4.  FGMOITVNET will only allow 3389/TCP from 172.16.0.0/20
 
-            ![Diagram of the Phase 1 - Networking preferred solution. At this time, we are unable to capture all of the information in the diagram. Future versions of this course should address this.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image8.png "Phase 1 - Networking preferred solution")
+            ![Diagram of the Phase 1 that depicts the preferred solution.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image8.png "Phase 1 - Networking preferred solution")
 
     Phase II: Network design
 
@@ -512,7 +512,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   The OsTicketVNET and MySQLVNET will be retired after the migration to PaaS
 
-![Diagram of the Phase 2 - Networking preferred solution. At this time, we are unable to capture all of the information in the diagram. Future versions of this course should address this.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image9.png "Phase 2 - Networking preferred solution")
+![Diagram of the Phase 1 that depicts the preferred solution.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image9.png "Phase 2 - Networking preferred solution")
 
 ## Checklist of preferred objection handling
 

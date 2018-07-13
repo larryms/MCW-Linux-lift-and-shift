@@ -52,7 +52,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Abstract and learning objectives
 
-In this Step-by-step Microsoft Cloud Workshop, you will migrate a Linux based application to the Azure Cloud. This will include the use of Azure IaaS Virtual Machines and Virtual Machine Scale Sets. Azure PaaS will also be leveraged including: Azure App Services (Web App), and Azure Database for MySQL. The attendee will leverage Azure Resource Manager templates, the Linux custom script extension, Github and a Linux Docker Container in the App Service.
+In this hands-on lab, you will migrate an on-premises based help desk application called OsTicket to Azure. This will be a two-phase project to lift and shift the application into Azure IaaS and then migrate it to Azure PaaS. The application is Linux based using Apache, PHP and MySQL (LAMP). During the process of these phases, you will ensure zero data loss.
 
 ## Overview
 
@@ -269,7 +269,7 @@ Note: It is very important to note change any of these parameters.
 
 -   A connection between the MySQLVNet and the OSTICKETXXVNET was made using VNet peering
 
--   When this peering connection was established the ScaleSet can now address the
+-   When this peering connection was established the ScaleSet can now address the database server
 
 ### Task 5: Export the osTicket database from the MySQL cluster
 
@@ -361,11 +361,11 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
     Before:
 
-    ![Screenshot of the Github Before window. At this time, we are unable to capture all of the information in the Github window. Future versions of this course should address this.](images/Hands-onlabunguided-Linuxliftandshiftimages/media/image26.png "Github Before window")
+    ![The configuration options in ost-config.php.](images/Hands-onlabunguided-Linuxliftandshiftimages/media/image26.png "Github Before window")
 
     After:
 
-    ![Screenshot of the Github After window. At this time, we are unable to capture all of the information in the Github window. Future versions of this course should address this.](images/Hands-onlabunguided-Linuxliftandshiftimages/media/image27.png "Github After window")
+    ![The configuration options in ost-config.php after the edit.](images/Hands-onlabunguided-Linuxliftandshiftimages/media/image27.png "Github After window")
 
 5.  Configure the Web App to deploy the application using your GitHub osticket repo
 

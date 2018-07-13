@@ -52,7 +52,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Abstract and learning objectives
 
-In this step-by-step Microsoft Cloud Workshop, you will migrate a Linux based application to the Azure Cloud. This will include the use of Azure IaaS Virtual Machines and Virtual Machine Scale Sets. Azure PaaS will also be leveraged including: Azure App Services (Web App), and Azure Database for MySQL. The student will leverage Azure Resource Manager templates, the Linux custom script extension, Github and a Linux Docker Container in the App Service.
+In this hands-on lab, you will migrate an on-premises based help desk application called OsTicket to Azure. This will be a two-phase project to lift and shift the application into Azure IaaS and then migrate it to Azure PaaS. The application is Linux based using Apache, PHP and MySQL (LAMP). During the process of these phases, you will ensure zero data loss.
 
 ## Overview
 
@@ -760,11 +760,11 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
     Before:
 
-    ![Screenshot of the Github Before window. At this time, we are unable to capture all of the information in the Github window. Future versions of this course should address this.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image106.png "Github Before window")
+    ![The configuration options in ost-config.php.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image106.png "Github Before window")
 
     After:
 
-    ![Screenshot of the Github After window. At this time, we are unable to capture all of the information in the Github window. Future versions of this course should address this.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image107.png "Github After window")
+    ![The configuration options in ost-config.php after the edit.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image107.png "Github After window")
 
 12. Once you have updated the text, scroll down, name your commit and click **Commit changes**
 
