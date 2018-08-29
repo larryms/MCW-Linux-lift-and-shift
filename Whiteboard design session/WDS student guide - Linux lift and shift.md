@@ -46,15 +46,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Abstract and learning objectives 
 
-In this whiteboard design session, attendees will learn how to migrate an existing Linux based deployment into Microsoft Azure and configure it for availability, connectivity, monitoring and general best practices with Azure Virtual Machines (VMs), Virtual Machine Scale Sets and Azure Web Apps with Linux.
+In this whiteboard design session, you will learn how to migrate an existing Linux based deployment into Microsoft Azure, and configure it for availability, connectivity, monitoring and general best practices using Azure Virtual Machines (VMs), Virtual Machine Scale Sets and Azure Web Apps with Linux.
 
--   Configure Linux VMs and VM Scale Sets in Azure for availability, storage, and connectivity
-
--   Migrate data from on-premises to Microsoft
-
--   Establish connectivity between multiple regions and on-premises to Azure
-
--   How to deploy and scale applications to Azure Web Apps on Linux
+By the end of the whiteboard design session, you will be better able to configure Linux VMs and VM Scale Sets in Azure for availability, storage, and connectivity. You will also be better prepared to migrate data from on-premises to Azure, establish connectivity between multiple regions and on-premises to Azure. You will also learn how to deploy and scale applications to Azure Web Apps on Linux.
 
 ## Step 1: Review the customer case study 
 
