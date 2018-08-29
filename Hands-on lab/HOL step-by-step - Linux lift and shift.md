@@ -52,11 +52,15 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Abstract and learning objectives
 
-In this hands-on lab, you will migrate an on-premises based help desk application called OsTicket to Azure. This will be a two-phase project to lift and shift the application into Azure IaaS and then migrate it to Azure PaaS. The application is Linux based using Apache, PHP and MySQL (LAMP). During the process of these phases, you will ensure zero data loss.
+In this hands-on lab, you will migrate an on-premises based help desk application called OsTicket, to Azure. This will be a two-phase project to lift-and-shift the application into Azure IaaS and then migrate it to Azure PaaS. The application is Linux based using Apache, PHP and MySQL (LAMP). During the process of these phases, you will ensure zero data loss.
+
+By the end of the hands-on lab you will be better able to configure Linux VMs and VM Scale Sets in Azure for availability, storage, and connectivity. You will also be better prepared to migrate data from on-premises to Azure, establish connectivity between multiple regions and on-premises to Azure. You will also learn how to deploy and scale applications to Azure Web Apps on Linux.
 
 ## Overview
 
-In this hands-on step-by-step lab, you will migrate an on-premises based helpdesk application called OsTicket to Azure. This will be a two-phase project to lift and shift the application into Azure IaaS and then migrate it to Azure PaaS. The application is Linux based using Apache, PHP and MySQL (LAMP). During the process of these phases you will ensure zero data loss.
+Fabrikam Global Manufacturing & Operations Corporation, based in Japan, provides product design, manufacturing, and repair services of domestic individual or industrial electronics, as well as global support for their customers. 
+
+To avoid any impact from restructured support operations, executives decided to migrate on-premises customer support systems into Microsoft Azure. The hope is that running Linux VMs on Azure should enable Fabrikam to lower costs while sustaining or even increasing availability of the application.
 
 -   **Phase I:** Lift and shift the application from on-premises to Azure IaaS using an auto scaling Virtual Machine Scale Set and a MySQL cluster with 3 nodes
 
