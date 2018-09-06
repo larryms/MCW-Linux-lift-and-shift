@@ -10,7 +10,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-June 2018
+September 2018
 </div>
 
 
@@ -31,9 +31,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 - [Linux lift and shift before the hands-on lab setup guide](#linux-lift-and-shift-before-the-hands-on-lab-setup-guide)
     - [Requirements](#requirements)
     - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Create a virtual machine to execute the lab](#task-1-create-a-virtual-machine-to-execute-the-lab)
-        - [Task 2: Install the MySQL Workbench](#task-2-install-the-mysql-workbench)
-        - [Task 3: Download hands-on lab step-by-step attendee files](#task-3-download-hands-on-lab-step-by-step-attendee-files)
+        - [Task 1: Create a virtual machine to execute the lab](#task-1--create-a-virtual-machine-to-execute-the-lab)
+        - [Task 2: Install the MySQL Workbench](#task-2--install-the-mysql-workbench)
+        - [Task 3: Download hands-on lab step-by-step attendee files](#task-3--download-hands-on-lab-step-by-step-attendee-files)
 
 <!-- /TOC -->
 

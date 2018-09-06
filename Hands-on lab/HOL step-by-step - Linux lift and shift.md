@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-June 2018
+September 2018
 </div>
 
 
@@ -30,20 +30,20 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 - [Overview](#overview)
 - [Requirements](#requirements)
 - [Help references](#help-references)
-- [Exercise 1: Deploy the on-premises OsTicket VM application](#exercise-1-deploy-the-on-premises-osticket-vm-application)
-    - [Task 1: Deploy the OnPremVM](#task-1-deploy-the-onpremvm)
-    - [Task 2: Export the osticket database](#task-2-export-the-osticket-database)
-- [Exercise 2: Migrate to Azure IaaS VM Scale Sets and MySQL cluster](#exercise-2-migrate-to-azure-iaas-vm-scale-sets-and-mysql-cluster)
-    - [Task 1: Deploy the MySQL HA cluster](#task-1-deploy-the-mysql-ha-cluster)
-    - [Task 2: Connect to the MySQL cluster and restore the database](#task-2-connect-to-the-mysql-cluster-and-restore-the-database)
-    - [Task 3: Deploy the Virtual Machine Scale Set for the OsTicket Application](#task-3-deploy-the-virtual-machine-scale-set-for-the-osticket-application)
-    - [Task 4: Connect the MySQLVNet to the Scale Sets VNet](#task-4-connect-the-mysqlvnet-to-the-scale-sets-vnet)
-    - [Task 5: Export the osticket database from the MySQL cluster](#task-5-export-the-osticket-database-from-the-mysql-cluster)
-- [Exercise 3: Migrate the OsTicket application from Azure IaaS to PaaS](#exercise-3-migrate-the-osticket-application-from-azure-iaas-to-paas)
-    - [Task 1: Create the MySQL database](#task-1-create-the-mysql-database)
-    - [Task 2: Restore the osticket database to MySQL PaaS](#task-2-restore-the-osticket-database-to-mysql-paas)
-    - [Task 3: Create the Web App](#task-3-create-the-web-app)
-    - [Task 4: Configure the OsTicket Web App](#task-4-configure-the-osticket-web-app)
+- [Exercise 1: Deploy the on-premises OsTicket VM application](#exercise-1--deploy-the-on-premises-osticket-vm-application)
+    - [Task 1: Deploy the OnPremVM](#task-1--deploy-the-onpremvm)
+    - [Task 2: Export the osticket database](#task-2--export-the-osticket-database)
+- [Exercise 2: Migrate to Azure IaaS VM Scale Sets and MySQL cluster](#exercise-2--migrate-to-azure-iaas-vm-scale-sets-and-mysql-cluster)
+    - [Task 1: Deploy the MySQL HA cluster](#task-1--deploy-the-mysql-ha-cluster)
+    - [Task 2: Connect to the MySQL cluster and restore the database](#task-2--connect-to-the-mysql-cluster-and-restore-the-database)
+    - [Task 3: Deploy the Virtual Machine Scale Set for the OsTicket Application](#task-3--deploy-the-virtual-machine-scale-set-for-the-osticket-application)
+    - [Task 4: Connect the MySQLVNet to the Scale Sets VNet](#task-4--connect-the-mysqlvnet-to-the-scale-sets-vnet)
+    - [Task 5: Export the osticket database from the MySQL cluster](#task-5--export-the-osticket-database-from-the-mysql-cluster)
+- [Exercise 3: Migrate the OsTicket application from Azure IaaS to PaaS](#exercise-3--migrate-the-osticket-application-from-azure-iaas-to-paas)
+    - [Task 1: Create the MySQL database](#task-1--create-the-mysql-database)
+    - [Task 2: Restore the osticket database to MySQL PaaS](#task-2--restore-the-osticket-database-to-mysql-paas)
+    - [Task 3: Create the Web App](#task-3--create-the-web-app)
+    - [Task 4: Configure the OsTicket Web App](#task-4--configure-the-osticket-web-app)
 - [After the hands-on lab](#after-the-hands-on-lab)
 
 <!-- /TOC -->
