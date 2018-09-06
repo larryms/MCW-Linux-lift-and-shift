@@ -404,7 +404,7 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
     az group create --name OsTicketVMSSRG --location "East US"
 ```
 
-3.  Execute the following command to deploy the ARM template. This command requires a parameter to be passed to the template. In the example, osticketXX is used. Replace that value with a unique value that is lowercase and less than 10 characters.
+3.  Execute the following command to deploy the ARM template. This command requires a parameter to be passed to the template. In the example, **osticketXX** is used. Replace that value with a unique value that is lowercase and less than 10 characters. Just replace the value of XX into any number which is unique. It will take up to 10 minutes to run and complete the command. 
 
 ```bash
     az group deployment create --name OsTicketVMSSRG --resource-group OsTicketVMSSRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/scalesetdeploy.json" --parameters vmssName=osticketXX
@@ -563,10 +563,10 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 3.  Execute the following command to create a MySQL Database.
   
-> **NOTE**: You must choose an unique name for the MySQL server. Replace **osticketsrv01** with a more unique value.
+> **NOTE**: You must choose an unique name for the MySQL server. Replace **osticketsrv01** with a more unique value / name
 
 ```bash
-    az mysql server create --resource-group OsTicketPaaSRG --name osticketsrv01 --location "East US" --admin-user demouser --admin-password demo@pass123 --sku-name B_Gen4_1 --storage-size 51200 --ssl-enforcement Disabled
+    az mysql server create --resource-group OsTicketPaaSRG --name osticketsrv01 --location "East US" --admin-user demouser --admin-password demo@pass123 --sku-name GP_Gen5_8 --storage-size 51200 --ssl-enforcement Disabled
 ```
 4.  Add an open firewall rule to the database by executing the following command. Ensure you replace the server name with the unique value from the previous step.
 
@@ -710,7 +710,7 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
     az appservice plan create -n OsTicket -g OsTicketPaaSRG --is-linux -l "East US" --sku S1 --number-of-workers 1
 ```
 
-3.  Execute the following command to create a new web app configured for PHP 7.0 inside of the new App Service Plan. The name of the web app (the value after **-n**) must be unique, so specify some numbers at the end to make it a more unique value.
+3.  Execute the following command to create a new web app configured for PHP 7.0 inside of the new App Service Plan. The name of the web app (the value after **-n**) must be unique, so specify some numbers at the end to make it a more unique value. Example osticketsystem999 or osticketsystem87876
 
 ```
     az webapp create -n osticketsystem -g OsTicketPaaSRG -p OsTicket -r "php|7.0"
