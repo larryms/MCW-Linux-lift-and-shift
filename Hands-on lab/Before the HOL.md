@@ -31,9 +31,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 - [Linux lift and shift before the hands-on lab setup guide](#linux-lift-and-shift-before-the-hands-on-lab-setup-guide)
     - [Requirements](#requirements)
     - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Create a virtual machine to execute the lab](#task-1--create-a-virtual-machine-to-execute-the-lab)
-        - [Task 2: Install the MySQL Workbench](#task-2--install-the-mysql-workbench)
-        - [Task 3: Download hands-on lab step-by-step attendee files](#task-3--download-hands-on-lab-step-by-step-attendee-files)
+        - [Task 1: Create a virtual machine to execute the lab](#task-1-create-a-virtual-machine-to-execute-the-lab)
+        - [Task 2: Install the MySQL Workbench](#task-2-install-the-mysql-workbench)
+        - [Task 3: Download hands-on lab step-by-step attendee files](#task-3-download-hands-on-lab-step-by-step-attendee-files)
 
 <!-- /TOC -->
 
@@ -81,11 +81,11 @@ Duration: 30 Minutes
 
 6.  Choose the **DS1\_V2 Standard** or **DS2\_V2** instance size on the Size blade
 
-**Note**: You may have to click the **View All** link to see the instance sizes.
+    > **Note**: You may have to click the **View All** link to see the instance sizes.
 
-![In the Choose a size blade, the DS1\_V2 Standard option is selected.](images/Setup/image7.png "Choose a size blade")
+    ![In the Choose a size blade, the DS1\_V2 Standard option is selected.](images/Setup/image7.png "Choose a size blade")
 
-**Note**: If the Azure Subscription you are using is [NOT]{.underline} a trial Azure subscription you may want to chose the DS2\_V2 to have more power in this LABMV. If you are using a trial subscription or one that you know has a restriction on the number of cores stick with the DS1\_V2.
+    > **Note**: If the Azure Subscription you are using is [NOT]{.underline} a trial Azure subscription you may want to chose the DS2\_V2 to have more power in this LABMV. If you are using a trial subscription or one that you know has a restriction on the number of cores stick with the DS1\_V2.
 
 7.  Click **Configure required settings** to specify a storage account for your virtual machine if a storage account name is not automatically selected for you
 

@@ -30,20 +30,20 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 - [Overview](#overview)
 - [Requirements](#requirements)
 - [Help references](#help-references)
-- [Exercise 1: Deploy the on-premises OsTicket VM application](#exercise-1--deploy-the-on-premises-osticket-vm-application)
-    - [Task 1: Deploy the OnPremVM](#task-1--deploy-the-onpremvm)
-    - [Task 2: Export the osticket database](#task-2--export-the-osticket-database)
-- [Exercise 2: Migrate to Azure IaaS VM Scale Sets and MySQL cluster](#exercise-2--migrate-to-azure-iaas-vm-scale-sets-and-mysql-cluster)
-    - [Task 1: Deploy the MySQL HA cluster](#task-1--deploy-the-mysql-ha-cluster)
-    - [Task 2: Connect to the MySQL cluster and restore the database](#task-2--connect-to-the-mysql-cluster-and-restore-the-database)
-    - [Task 3: Deploy the Virtual Machine Scale Set for the OsTicket Application](#task-3--deploy-the-virtual-machine-scale-set-for-the-osticket-application)
-    - [Task 4: Connect the MySQLVNet to the Scale Sets VNet](#task-4--connect-the-mysqlvnet-to-the-scale-sets-vnet)
-    - [Task 5: Export the osticket database from the MySQL cluster](#task-5--export-the-osticket-database-from-the-mysql-cluster)
-- [Exercise 3: Migrate the OsTicket application from Azure IaaS to PaaS](#exercise-3--migrate-the-osticket-application-from-azure-iaas-to-paas)
-    - [Task 1: Create the MySQL database](#task-1--create-the-mysql-database)
-    - [Task 2: Restore the osticket database to MySQL PaaS](#task-2--restore-the-osticket-database-to-mysql-paas)
-    - [Task 3: Create the Web App](#task-3--create-the-web-app)
-    - [Task 4: Configure the OsTicket Web App](#task-4--configure-the-osticket-web-app)
+- [Exercise 1: Deploy the on-premises OsTicket VM application](#exercise-1-deploy-the-on-premises-osticket-vm-application)
+    - [Task 1: Deploy the OnPremVM](#task-1-deploy-the-onpremvm)
+    - [Task 2: Export the osticket database](#task-2-export-the-osticket-database)
+- [Exercise 2: Migrate to Azure IaaS VM Scale Sets and MySQL cluster](#exercise-2-migrate-to-azure-iaas-vm-scale-sets-and-mysql-cluster)
+    - [Task 1: Deploy the MySQL HA cluster](#task-1-deploy-the-mysql-ha-cluster)
+    - [Task 2: Connect to the MySQL cluster and restore the database](#task-2-connect-to-the-mysql-cluster-and-restore-the-database)
+    - [Task 3: Deploy the Virtual Machine Scale Set for the OsTicket Application](#task-3-deploy-the-virtual-machine-scale-set-for-the-osticket-application)
+    - [Task 4: Connect the MySQLVNet to the Scale Sets VNet](#task-4-connect-the-mysqlvnet-to-the-scale-sets-vnet)
+    - [Task 5: Export the osticket database from the MySQL cluster](#task-5-export-the-osticket-database-from-the-mysql-cluster)
+- [Exercise 3: Migrate the OsTicket application from Azure IaaS to PaaS](#exercise-3-migrate-the-osticket-application-from-azure-iaas-to-paas)
+    - [Task 1: Create the MySQL database](#task-1-create-the-mysql-database)
+    - [Task 2: Restore the osticket database to MySQL PaaS](#task-2-restore-the-osticket-database-to-mysql-paas)
+    - [Task 3: Create the Web App](#task-3-create-the-web-app)
+    - [Task 4: Configure the OsTicket Web App](#task-4-configure-the-osticket-web-app)
 - [After the hands-on lab](#after-the-hands-on-lab)
 
 <!-- /TOC -->
@@ -109,17 +109,17 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 
 2.  Execute the following command to create a resource group that will contain the application: 
 
-> **NOTE:** You can also specify an alternate region.
+    > **NOTE:** You can also specify an alternate region.
 
-```bash
-    az group create --name OsTicketOnPremRG --location "East US"
-```
+    ```bash
+        az group create --name OsTicketOnPremRG --location "East US"
+    ```
 
 3.  Execute the following command to deploy the ARM template
 
-```bash
-    az group deployment create --name OsTicketOnPremRG --resource-group OsTicketOnPremRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/onpremvmdeploy.json" 
-```
+    ```bash
+        az group deployment create --name OsTicketOnPremRG --resource-group OsTicketOnPremRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/onpremvmdeploy.json" 
+    ```
 4.  This deployment will take about 5 minutes to complete. Wait until it has been deployed before moving on to the next step.
 
 5.  Once the deployment has completed open the resource group **OsTicketOnPremRG** and review the deployment
@@ -264,19 +264,19 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
 2.  Execute the following command to create a resource group that will contain the MySQL HA environment:
 
-> **NOTE:** Ensure you that use the same region as the OsTicket application.
+    > **NOTE:** Ensure you that use the same region as the OsTicket application.
 
-```bash
-    az group create --name OsTicketMySQLVMRG --location "East US"
-```
+    ```bash
+        az group create --name OsTicketMySQLVMRG --location "East US"
+    ```
 
 3.  Execute the following command to deploy the ARM template:
 
-```bash
-    az group deployment create --name OsTicketMySQLVMRG --resource-group OsTicketMySQLVMRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/mysqlhadeploy.json" 
-```
+    ```bash
+        az group deployment create --name OsTicketMySQLVMRG --resource-group OsTicketMySQLVMRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/mysqlhadeploy.json" 
+    ```
 
-> **NOTE:** The settings that are being deployed as part of the template will be referenced later in the lab.
+    > **NOTE:** The settings that are being deployed as part of the template will be referenced later in the lab.
 
 -   OS User Name: **bitnami**
 
@@ -398,22 +398,22 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
 2.  Execute the following command to create a resource group that will contain the MySQL HA environment.
 
-**NOTE:** Ensure you that use the same region as the OsTicket application.
+    > **NOTE:** Ensure you that use the same region as the OsTicket application.
 
-```bash
-    az group create --name OsTicketVMSSRG --location "East US"
-```
+    ```bash
+        az group create --name OsTicketVMSSRG --location "East US"
+    ```
 
 3.  Execute the following command to deploy the ARM template. This command requires a parameter to be passed to the template. In the example, **osticketXX** is used. Replace that value with a unique value that is lowercase and less than 10 characters. Just replace the value of XX into any number which is unique. It will take up to 10 minutes to run and complete the command. 
 
-```bash
-    az group deployment create --name OsTicketVMSSRG --resource-group OsTicketVMSSRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/scalesetdeploy.json" --parameters vmssName=osticketXX
-```
-Take note of the credentials for the VMSS
+    ```bash
+        az group deployment create --name OsTicketVMSSRG --resource-group OsTicketVMSSRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/scalesetdeploy.json" --parameters vmssName=osticketXX
+    ```
+    Take note of the credentials for the VMSS
 
--   Admin Username: **demouser**
+    -   Admin Username: **demouser**
 
--   OS Admin Password: **demo@pass123**
+    -   OS Admin Password: **demo@pass123**
 
 4.  Once the deployment has completed, open the **OsTicketVMSSRG** and review the deployment
 
@@ -557,17 +557,17 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 2.  Execute the following command to create a resource group to contain the MySQL DB, using a region of your choice:
 
-```bash
-    az group create --name OsTicketPaaSRG --location "East US"
-```
+    ```bash
+        az group create --name OsTicketPaaSRG --location "East US"
+    ```
 
 3.  Execute the following command to create a MySQL Database.
   
-> **NOTE**: You must choose an unique name for the MySQL server. Replace **osticketsrv01** with a more unique value / name
+    > **NOTE**: You must choose an unique name for the MySQL server. Replace **osticketsrv01** with a more unique value / name
 
-```bash
-    az mysql server create --resource-group OsTicketPaaSRG --name osticketsrv01 --location "East US" --admin-user demouser --admin-password demo@pass123 --sku-name GP_Gen5_8 --storage-size 51200 --ssl-enforcement Disabled
-```
+    ```bash
+        az mysql server create --resource-group OsTicketPaaSRG --name osticketsrv01 --location "East US" --admin-user demouser --admin-password demo@pass123 --sku-name GP_Gen5_8 --storage-size 51200 --ssl-enforcement Disabled
+    ```
 4.  Add an open firewall rule to the database by executing the following command. Ensure you replace the server name with the unique value from the previous step.
 
 ```
@@ -586,12 +586,12 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 8.  Open a new notepad window and paste this into a new file to retain this string and more information in the next few steps. Update the script to the following:
 
-> **NOTE:** Your hostname is the unique name you chose to name your Azure Database instance.
+    > **NOTE:** Your hostname is the unique name you chose to name your Azure Database instance.
 
-```
-Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=demouser@(host_name); Password=demo@pass123
-```
-\
+    ```
+    Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=demouser@(host_name); Password=demo@pass123
+    ```
+
     ![In the Notepad window, the Web App Script displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image80.png "Notepad window")
 
 9.  Click **Overview** for the MySQL server
@@ -706,15 +706,15 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
 2.  Execute the following command to create a Linux-based **App Service Plan** for the new web app, using the **SAME** region where you created your **Azure Database for MySQL server** instance in the previous task
 
-```bash
-    az appservice plan create -n OsTicket -g OsTicketPaaSRG --is-linux -l "East US" --sku S1 --number-of-workers 1
-```
+    ```bash
+        az appservice plan create -n OsTicket -g OsTicketPaaSRG --is-linux -l "East US" --sku S1 --number-of-workers 1
+    ```
 
 3.  Execute the following command to create a new web app configured for PHP 7.0 inside of the new App Service Plan. The name of the web app (the value after **-n**) must be unique, so specify some numbers at the end to make it a more unique value. Example osticketsystem999 or osticketsystem87876
 
-```
-    az webapp create -n osticketsystem -g OsTicketPaaSRG -p OsTicket -r "php|7.0"
-```
+    ```
+        az webapp create -n osticketsystem -g OsTicketPaaSRG -p OsTicket -r "php|7.0"
+    ```
 
 4.  Once the deployment has completed, open the **OsTicketPaaSRG** resource group. Notice there are now three objects: **MySQL database, Linux App Service Plan** and the **Web App**.
 
