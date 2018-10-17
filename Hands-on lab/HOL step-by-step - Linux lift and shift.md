@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-June 2018
+September 2018
 </div>
 
 
@@ -62,9 +62,9 @@ Fabrikam Global Manufacturing & Operations Corporation, based in Japan, provides
 
 To avoid any impact from restructured support operations, executives decided to migrate on-premises customer support systems into Microsoft Azure. The hope is that running Linux VMs on Azure should enable Fabrikam to lower costs while sustaining or even increasing availability of the application.
 
--   **Phase I:** Lift and shift the application from on-premises to Azure IaaS using an auto scaling Virtual Machine Scale Set and a MySQL cluster with 3 nodes
+-   **Phase I:** Lift and shift the application from on-premises to Azure IaaS using an auto scaling Virtual Machine Scale Set and a MySQL cluster with 3 nodes.
 
--   **Phase II:** Migrate to PaaS using Azure App Services with a Linux Docker Container and Azure Database for MySQL
+-   **Phase II:** Migrate to PaaS using Azure App Services with a Linux Docker Container and Azure Database for MySQL.
 
 **Phase I will result in an environment resembling this diagram:**
 
@@ -109,20 +109,20 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 
 2.  Execute the following command to create a resource group that will contain the application: 
 
-> **NOTE:** You can also specify an alternate region.
+    > **Note:** You can also specify an alternate region.
 
-```bash
-    az group create --name OsTicketOnPremRG --location "East US"
-```
+    ```bash
+        az group create --name OsTicketOnPremRG --location "East US"
+    ```
 
-3.  Execute the following command to deploy the ARM template
+3.  Execute the following command to deploy the ARM template:
 
-```bash
-    az group deployment create --name OsTicketOnPremRG --resource-group OsTicketOnPremRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/onpremvmdeploy.json" 
-```
+    ```bash
+        az group deployment create --name OsTicketOnPremRG --resource-group OsTicketOnPremRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/onpremvmdeploy.json" 
+    ```
 4.  This deployment will take about 5 minutes to complete. Wait until it has been deployed before moving on to the next step.
 
-5.  Once the deployment has completed open the resource group **OsTicketOnPremRG** and review the deployment
+5.  Once the deployment has completed open the resource group **OsTicketOnPremRG** and review the deployment.
 
     ![In the Resource Group blade, Overview is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image21.png "Resource Group blade")
 
@@ -130,51 +130,51 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 
     ![On the Microsoft Cloud Workshop tab, the Support Center displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image22.png "Microsoft Cloud Workshop tab")
 
-7.  Click the **Sign in** link in the upper-right hand corner of the screen
+7.  Click the **Sign in** link in the upper-right hand corner of the screen.
 
     ![Screenshot of the Sign In button.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image23.png "Sign In button")
 
-8.  Locate **I'm an agent** and click the corresponding **sign in here** link
+8.  Locate **I'm an agent** and click the corresponding **sign in here** link.
 
     ![On the Sign in to Microsoft Cloud Workshop Registration page, the Sign in here link was selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image24.png "Sign in to Microsoft Cloud Workshop Registration page")
 
 9.  At the OsTicket screen, enter the credentials shown below and click **Log In**:
 
-    a.  Username: ***demouser***
+    a.  Username: **demouser**
 
-    b.  Password: ***demo@pass123***
+    b.  Password: **demo@pass123**
 
     ![The osTicket log in webpage displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image25.png "osTicket log in webpage")
 
-10. Once logged into the OsTicket system, click **My Tickets**
+10. Once logged into the OsTicket system, click **My Tickets**.
 
     ![On the osTicket system page, on the Tickets tab, My Tickets is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image26.png "osTicket system page")
 
-11. On the **My Tickets** screen, click through to one of the tickets
+11. On the **My Tickets** screen, click through to one of the tickets.
 
     ![On the osTicket system page, on the Tickets tab, details for a specific ticket display.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image27.png "osTicket system page")
 
-12. Next, click the **Users** tab and notice the users that are entered into the system
+12. Next, click the **Users** tab and notice the users that are entered into the system.
 
     ![On the osTicket system page, the Users tab is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image28.png "osTicket system page")
 
-13. Feel free to create new tickets or new users to add to your dataset
+13. Feel free to create new tickets or new users to add to your dataset.
 
 ### Task 2: Export the osticket database
 
-1.  From your **LABVM**, connect to the Azure portal and then open the **OsTicketOnPremRG** resource group
+1.  From your **LABVM**, connect to the Azure portal and then open the **OsTicketOnPremRG** resource group.
 
     ![Screenshot of the OsTicketOnPremRG option.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image29.png "OsTicketOnPremRG option")
 
-2.  Locate the **onpremvmip** Public IP address and **take note of the address**
+2.  Locate the **onpremvmip** Public IP address and **take note of the address**.
 
     ![In the Public IP address blade, Overview is selected. Under Essentials, the IP address is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image30.png "Public IP address blade")
 
-3.  Next on the LABVM click Start and then locate the MySQL Workbench
+3.  Next on the LABVM click Start and then locate the MySQL Workbench.
 
     ![On the Start menu, MySQL Workbench 6.3 CE is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image31.png "Start menu")
 
-4.  Click the Plus sign next to MySQL Connections on the Workbench
+4.  Click the Plus sign next to MySQL Connections on the Workbench.
 
     ![The plus sign on the My SQL Collections option is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image32.png "My SQL Collections option")
 
@@ -200,9 +200,9 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 
     ![The Setup New Connection page displays with fields set to the previously defined settings.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image33.png "Setup New Connection page")
 
-6.  Once configured, click **Test Connection**
+6.  Once configured, click **Test Connection**.
 
-7.  A pop up will appear with a notice that the **SSH Server Fingerprint Missing**, click **continue**
+7.  A pop up will appear with a notice that the **SSH Server Fingerprint Missing**, click **continue**.
 
     ![The MySQL Workbench popup displays, with the Continue button selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image34.png "MySQL Workbench popup")
 
@@ -222,7 +222,7 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 
     ![Under Schemas, osticket is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image38.png "Schemas ")
 
-12. Locate the **ost\_user** table, **right-click** and then click **Select Rows -- Limit 1000**
+12. Locate the **ost\_user** table, **right-click** and then click **Select Rows -- Limit 1000**. 
 
     ![The ost\_user table is selected. From its menu, Select Rows - Limit 1000 is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image39.png "ost_user table")
 
@@ -230,21 +230,21 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 
     ![In the Workbench, a query displays with same users.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image40.png "Workbench query")
 
-14. In the **Navigator** pane to the left, click **Data Export**
+14. In the **Navigator** pane to the left, click **Data Export**.
 
-> **NOTE:** You may have to toggle tabs in the pane to **Management**. 
+> **Note:** You may have to toggle tabs in the pane to **Management**. 
 
-    ![Under Management, Data Export is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image41.png "Management section")
+   ![Under Management, Data Export is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image41.png "Management section")
 
 15. On the **Data Export** screen, select the **osticket** schema. Then, select **Export to Self-Contained File**, and name the file **c:\\HOL\\onpremvm.sql** and click **Start Export**.
 
     ![In the Data Export window, under Tables to Export, the check box for osticket is selected. The Export to Self-Contained file is selected, and the address is C:\\HOL\\onpremvm.sql.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image42.png "Data Export window")
 
-16. You will get a version mismatch warning, click **Continue Anyway**
+16. You will get a version mismatch warning, click **Continue Anyway**.
 
     ![In the MySQL Workbench popup, information displays about a version mismatch. The Continue Anyway button is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image43.png "MySQL Workbench popup")
 
-17. Once the export has completed, you will receive this message
+17. Once the export has completed, you will receive this message.
 
     ![On the data Export page, Object Selection tab, a progress bar shows that the export has completed.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image44.png "data Export page")
 
@@ -258,33 +258,33 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
 ### Task 1: Deploy the MySQL HA cluster
 
-1.  From the Azure portal, click on the **Cloud Shell** icon in the top navigation
+1.  From the Azure portal, click on the **Cloud Shell** icon in the top navigation.
 
     ![Screenshot of the Launch Cloud shell icon.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image20.png "Launch Cloud shell icon")
 
 2.  Execute the following command to create a resource group that will contain the MySQL HA environment:
 
-> **NOTE:** Ensure you that use the same region as the OsTicket application.
+    > **Note:** Ensure you that use the same region as the OsTicket application.
 
-```bash
-    az group create --name OsTicketMySQLVMRG --location "East US"
-```
+    ```bash
+        az group create --name OsTicketMySQLVMRG --location "East US"
+    ```
 
 3.  Execute the following command to deploy the ARM template:
 
-```bash
-    az group deployment create --name OsTicketMySQLVMRG --resource-group OsTicketMySQLVMRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/mysqlhadeploy.json" 
-```
+    ```bash
+        az group deployment create --name OsTicketMySQLVMRG --resource-group OsTicketMySQLVMRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/mysqlhadeploy.json" 
+    ```
 
-> **NOTE:** The settings that are being deployed as part of the template will be referenced later in the lab.
+    > **Note:** The settings that are being deployed as part of the template will be referenced later in the lab.
 
--   OS User Name: **bitnami**
+    -   OS User Name: **bitnami**
 
--   OS Admin Password: **demo\@pass123**
+    -   OS Admin Password: **demo\@pass123**
 
--   App Database: **osticket**
+    -   App Database: **osticket**
 
--   App Password: **demo\@pass123**
+    -   App Password: **demo\@pass123**
 
 4.  This deployment will take about 15 minutes to complete. Wait until it has been deployed before moving on to the next step.
 
@@ -298,11 +298,11 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
 ### Task 2: Connect to the MySQL cluster and restore the database
 
-1.  On the **LABVM**, if it isn't still open, click **Start** and then select **MySQL Workbench**
+1.  On the **LABVM**, if it isn't still open, click **Start** and then select **MySQL Workbench**.
 
     ![On the Start menu, MySQL Workbench 6.3 CE is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image31.png "Start menu")
 
-2.  Click the **Plus** sign next to **MySQL Connections** on the Workbench
+2.  Click the **Plus** sign next to **MySQL Connections** on the Workbench.
 
     ![The plus sign next to MySQL Connections is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image32.png "MySQL Connections option")
 
@@ -328,9 +328,9 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
     ![Fields in the Setup New Connection dialog box are set to the previously defined settings.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image47.png "Setup New Connection dialog box")
 
-4.  Once configured, click **Test Connection**
+4.  Once configured, click **Test Connection**.
 
-5.  A popup will appear with a notice that the **SSH Server Fingerprint Missing**, click **continue**
+5.  A popup will appear with a notice that the **SSH Server Fingerprint Missing**, click **continue**.
 
     ![A MySQL Workbench popup displays warning you that the SSH Server Fingerprint is missing. The Continue button is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image48.png "MySQL Workbench warning popup")
 
@@ -338,7 +338,7 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
     ![A MySQL Workbench success popup displays, stating that it successfully made the MySQL connection.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image49.png "MySQL Workbench success popup ")
 
-7.  Click **OK** to save the connection that you just configured
+7.  Click **OK** to save the connection that you just configured.
 
 8.  The Connection will appear. Double-click to start a session with the MySQL Cluster instance running on the Azure IaaS.
 
@@ -348,14 +348,16 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
     ![The MySQL Workbench displays. In the left pane, under Management, Server Status is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image51.png "MySQL Workbench")
 
-10. Click the **New Query** button
+10. Click the **New Query** button.
 
     ![On the MySQL Workbench menu, the New Query button is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image52.png "MySQL Workbench menu")
 
 11. Execute the following query to show the status of the cluster nodes known as "Slaves". Click the **Lighting Bolt** to run the query. Notice that the two replication partners appear in the results window as well as their TCP port of 3306.
+
     ```
     SHOW SLAVE HOSTS
     ```
+    
     ![On MySQL Workbench, the run query (lightening bolt) icon is selected. A callout points to the Query results, which contains the two replication partners.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image53.png "MySQL Workbench")
 
 12. Next, click the **osticket** database under Schemas and expand to see the tables. This time, notice that nothing is in the database yet, since you have not restored it yet from the MySQL data export you created in a previous task.
@@ -366,7 +368,7 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
     ![Under Management, Data Import/Restore is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image55.png "Management section")
 
-14. On the **Data Import** screen, click the **Import from Self-Contained File**, and then select the **C:\\HOL\\onpremvm.sql** data file
+14. On the **Data Import** screen, click the **Import from Self-Contained File**, and then select the **C:\\HOL\\onpremvm.sql** data file.
 
     ![On the Data Import page, on the Import from Disk tab, the option to Import from self-contained file is selected, and the file location is c:\\HOL\\ompremvm.sql.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image56.png "Data Import page")
 
@@ -378,11 +380,11 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
     ![On the MySQL Cluster Data Import page, on the Import Progress tab, status shows as import completed.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image58.png "MySQL Cluster Data Import page")
 
-17. Move back to the Schemas area of the MySQL Workbench, and click the refresh icon
+17. Move back to the Schemas area of the MySQL Workbench, and click the refresh icon.
 
     ![Under Schemas, ost\_user is selected, and from its right-click menu, Select Rows-Limit 1000 is selected..](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image59.png "Schemas section")
 
-18. The tables of the database now appear since they have been restored. Locate the **ost\_user** table, **right-click** and then click **Select Rows -- Limit 1000**
+18. The tables of the database now appear since they have been restored. Locate the **ost\_user** table, **right-click** and then click **Select Rows -- Limit 1000**.
 
     ![The ost\_user table is selected. From its menu, Select Rows - Limit 1000 is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image39.png "ost_user table")
 
@@ -392,30 +394,30 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
 ### Task 3: Deploy the Virtual Machine Scale Set for the OsTicket Application
 
-1.  From the Azure portal, click on the **Cloud Shell** icon on the top navigation
+1.  From the Azure portal, click on the **Cloud Shell** icon on the top navigation.
 
     ![Screenshot of the Launch Cloud shell icon.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image20.png "Launch Cloud shell icon")
 
-2.  Execute the following command to create a resource group that will contain the MySQL HA environment.
+2.  Execute the following command to create a resource group that will contain the MySQL HA environment:
 
-**NOTE:** Ensure you that use the same region as the OsTicket application.
+    > **Note:** Ensure you that use the same region as the OsTicket application.
 
-```bash
-    az group create --name OsTicketVMSSRG --location "East US"
-```
+    ```bash
+        az group create --name OsTicketVMSSRG --location "East US"
+    ```
 
-3.  Execute the following command to deploy the ARM template. This command requires a parameter to be passed to the template. In the example, osticketXX is used. Replace that value with a unique value that is lowercase and less than 10 characters.
+3.  Execute the following command to deploy the ARM template. This command requires a parameter to be passed to the template. In the example, **osticketXX** is used. Replace that value with a unique value that is lowercase and less than 10 characters. Just replace the value of XX into any number which is unique. It will take up to 10 minutes to run and complete the command. 
 
-```bash
-    az group deployment create --name OsTicketVMSSRG --resource-group OsTicketVMSSRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/scalesetdeploy.json" --parameters vmssName=osticketXX
-```
-Take note of the credentials for the VMSS
+    ```bash
+        az group deployment create --name OsTicketVMSSRG --resource-group OsTicketVMSSRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/scalesetdeploy.json" --parameters vmssName=osticketXX
+    ```
+    Take note of the credentials for the VMSS:
 
--   Admin Username: **demouser**
+    -   Admin Username: **demouser**
 
--   OS Admin Password: **demo@pass123**
+    -   OS Admin Password: **demo@pass123**
 
-4.  Once the deployment has completed, open the **OsTicketVMSSRG** and review the deployment
+4.  Once the deployment has completed, open the **OsTicketVMSSRG** and review the deployment.
 
     ![In the OsTicketVMSSRG Resource Group blade, in the left pane, Overview is selected. In the right pane, four items display under Name: osticket1 (vm scale set), osticket11lb (load balancer), osticket11pip (public IP address), and osticket11vnet (virtual network).](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image60.png "Resource Group blade")
 
@@ -423,11 +425,11 @@ Take note of the credentials for the VMSS
 
     ![In the Virtual Machine Scale Set blade, under Essentials, a callout points to Autoscaling, which is currently On.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image61.png "Virtual Machine Scale Set blade")
 
-6.  Take note of the public IP address
+6.  Take note of the public IP address.
 
 7.  If you browse to the IP address in a new tab, you will not be able to connect to the webpage. This is due to the lack of connectivity to the MySQL Cluster.
 
-8.  Click the **Instances** link in Settings
+8.  Click the **Instances** link in Settings.
 
     ![Under Settings, Instances is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image62.png "Settings section")
 
@@ -439,11 +441,11 @@ Take note of the credentials for the VMSS
 
     ![The osticket11\_0 information pane displays. A callout points Latest model applied, which is set to Yes.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image64.png "Information pane")
 
-11. Click the **Scaling** link in the **Settings** menu section of the Scale Set
+11. Click the **Scaling** link in the **Settings** menu section of the Scale Set.
 
     ![Under Settings, Scaling is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image65.png "Settings section")
 
-12. Review the rules for **Scale Out** and **Scale In**
+12. Review the rules for **Scale Out** and **Scale In**.
 
     ![The rules for scale in and scale out display.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image66.png "Scale in and out rules")
 
@@ -455,11 +457,11 @@ Take note of the credentials for the VMSS
 
 The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the OsTicket application online, you will need to create a peering between these VNets. This was the reason that both deployments needed to be in the same regions along with performance hit if they were in different regions.
 
-1.  In the Azure portal, click on **Virtual Networks** followed by **MySQLVNet** and **Peerings**
+1.  In the Azure portal, click on **Virtual Networks** followed by **MySQLVNet** and **Peerings**.
 
     ![In the Virtual networks blade, under Name, MySQL VNet is selected. In the Virtual Network blade, under Settings, Peerings is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image68.png "Virtual networks and Virtual Network blades")
 
-2.  Click **+Add**
+2.  Click **+Add**.
 
     ![The Add button is selected in the Virtual Network blade.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image69.png "Virtual Network blade")
 
@@ -467,7 +469,7 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
     ![In the Add peering blade, the Name field displays OSTICKETPeering, and the Virtual Network (Choose a virtual network) option is selected. In the Choose a virtual network blade, the osticket11vnet virtual network is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image70.png "Add peering and Choose a virtual network blades")
 
-4.  Your peering will appear in the blade as **Initiated** (you may have to refresh the blade to see this update)
+4.  Your peering will appear in the blade as **Initiated** (you may have to refresh the blade to see this update).
 
     ![In the Virtual network blade, a callout points out that OSTICKETPeering now has a peering status of initiated.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image71.png "Virtual network blade")
 
@@ -475,7 +477,7 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
     ![In the Virtual networks blade, under Name, osticket11vnet is selected. In the Virtual Network blade, under Settings, Peerings is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image72.png "Virtual networks and virtual network blades")
 
-6.  Click **+Add**
+6.  Click **+Add**.
 
     ![the Add button is selected in the Visual network blade.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image73.png "Visual network blade")
 
@@ -483,7 +485,7 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
     ![OSTICKETPeering displays in the Name field of the Add peering blade, and Virtual network, Choose a virtual network is selected. In the Choose virtual network blade, MySQLVNet is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image74.png "Add peering and Choose virtual network blades")
 
-8.  Your peering will appear in the blade as **Connected** (you may have to refresh the blade to see this update)
+8.  Your peering will appear in the blade as **Connected** (you may have to refresh the blade to see this update).
 
     ![The Add button is selected in the Virtual Network blade.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image75.png "Virtual Network blade")
 
@@ -491,15 +493,15 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
     ![The Support Center website displays with two button options: Open a New Ticket, or Check Ticket Status.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image22.png "Support Center website")
 
-10. Click the **Sign in** link
+10. Click the **Sign in** link.
 
     ![Screenshot of the Sign in link.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image23.png "Sign in link")
 
-11. Locate **I'm an agent**, and click the **sign in here** link
+11. Locate **I'm an agent**, and click the **sign in here** link.
 
     ![On the Sign in to Microsoft Cloud Workshop page, next to I\'m an agent, the Sign in here link is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image24.png "Sign in to Microsoft Cloud Workshop page")
 
-12. At the OsTicket screen enter the **username** and **password**, and click **Log In**
+12. At the OsTicket screen enter the **username** and **password**, and click **Log In**.
 
     a.  Username: ***demouser***
 
@@ -507,7 +509,7 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
     ![The osTicket log in webpage displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image25.png "osTicket log in webpage")
 
-13. Once logged into the OsTicket system, click **My Tickets**
+13. Once logged into the OsTicket system, click **My Tickets**.
 
     ![On the osTicket page, tickets tab, My Tickets (4) is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image26.png "osTicket page, tickets tab")
 
@@ -517,15 +519,15 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
 ### Task 5: Export the osticket database from the MySQL cluster
 
-1.  Next, on the **LABVM**, click **Start** and then locate the **MySQL Workbench**
+1.  Next, on the **LABVM**, click **Start** and then locate the **MySQL Workbench**.
 
     ![On the Start menu, MySQL Workbench 6.3 CE is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image31.png "Start menu")
 
-2.  Double-click to start a session with the MySQL cluster
+2.  Double-click to start a session with the MySQL cluster.
 
     ![Screenshot of the MySQL Cluster connection.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image50.png "MySQL Cluster connection")
 
-3.  In the **Navigator** pane, on the **Management** tab, click **Data Export**
+3.  In the **Navigator** pane, on the **Management** tab, click **Data Export**.
 
     ![Under Management, Data Export is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image41.png "Management section")
 
@@ -533,11 +535,11 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
     ![On the Administration - Data Export page, on the Object selection tab, under Tables to Export, osticket is selected. Under Export options, Export to Self-Contained File is selected, and the file location is C:\\HOL\\mysqlcluster.sql.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image76.png "Administration - Data Export page")
 
-5.  You will get a version mismatch warning. Cick **Continue Anyway**
+5.  You will get a version mismatch warning. Cick **Continue Anyway**.
 
     ![A MySQL Workbench warning popup displays letting you know there is a version mismatch. The continue anyway button is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image43.png "MySQL Workbench warning popup")
 
-6.  Once the export has completed, you will receive this message
+6.  Once the export has completed, you will receive this message.
 
     ![On the Administration - Data Export page, on the Export Progress tab, the status shows that export has completed.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image77.png "Administration - Data Export page")
 
@@ -557,44 +559,45 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 2.  Execute the following command to create a resource group to contain the MySQL DB, using a region of your choice:
 
-```bash
-    az group create --name OsTicketPaaSRG --location "East US"
-```
+    ```bash
+        az group create --name OsTicketPaaSRG --location "East US"
+    ```
 
-3.  Execute the following command to create a MySQL Database.
+3.  Execute the following command to create a MySQL Database:
   
-> **NOTE**: You must choose an unique name for the MySQL server. Replace **osticketsrv01** with a more unique value.
+    > **Note**: You must choose an unique name for the MySQL server. Replace **osticketsrv01** with a more unique value / name.
 
-```bash
-    az mysql server create --resource-group OsTicketPaaSRG --name osticketsrv01 --location "East US" --admin-user demouser --admin-password demo@pass123 --sku-name B_Gen4_1 --storage-size 51200 --ssl-enforcement Disabled
-```
+    ```bash
+        az mysql server create --resource-group OsTicketPaaSRG --name osticketsrv01 --location "East US" --admin-user demouser --admin-password demo@pass123 --sku-name GP_Gen5_8 --storage-size 51200 --ssl-enforcement Disabled
+    ```
+
 4.  Add an open firewall rule to the database by executing the following command. Ensure you replace the server name with the unique value from the previous step.
 
-```
+    ```
     az mysql server firewall-rule create --resource-group OsTicketPaaSRG --server-name osticketsrv01 --name Internet --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
-```
+    ```
 
-5.  Once the MySQL database has been deployed, locate and open it from the **OsTicketPaaSRG** resource group using the Azure Portal
+5.  Once the MySQL database has been deployed, locate and open it from the **OsTicketPaaSRG** resource group using the Azure Portal.
 
-6.  Click **Connection Strings**
+6.  Click **Connection Strings**.
 
     ![Under Settings, Connection strings is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image78.png "Settings section")
 
-7.  Locate the **Web App** connection string, and press the **Click the copy** button
+7.  Locate the **Web App** connection string, and press the **Click the copy** button.
 
     ![The Web App script\'s copy button is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image79.png "Web App script")
 
 8.  Open a new notepad window and paste this into a new file to retain this string and more information in the next few steps. Update the script to the following:
 
-> **NOTE:** Your hostname is the unique name you chose to name your Azure Database instance.
+    > **Note:** Your hostname is the unique name you chose to name your Azure Database instance.
 
-```
-Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=demouser@(host_name); Password=demo@pass123
-```
-\
+    ```
+    Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=demouser@(host_name); Password=demo@pass123
+    ```
+
     ![In the Notepad window, the Web App Script displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image80.png "Notepad window")
 
-9.  Click **Overview** for the MySQL server
+9.  Click **Overview** for the MySQL server.
 
     ![On the Azure Database for MySQL Server blade, Overview is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image81.png "Azure Database for MySQL Server blade")
 
@@ -602,17 +605,17 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
     ![Under Essentials, the Server name and Server admin login name are circled. The Server name is osticketmysql.mysql.database.azure.com, and the login name is demouser\@osticketmysql](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image82.png "Essentials section")
 
-11. Scroll down, and notice that there are currently four databases that are running on your server
+11. Scroll down, and notice that there are currently four databases that are running on your server.
 
     ![In the Databases section, MySQL databases hsa a number 4.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image83.png "Databases section")
 
 ### Task 2: Restore the osticket database to MySQL PaaS
 
-1.  On the **LABVM**, click **Start** and then launch MySQL Workbench
+1.  On the **LABVM**, click **Start** and then launch MySQL Workbench.
 
     ![On the Start menu, MySQL Workbench 6.3 CE is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image31.png "Start menu")
 
-2.  Click the Plus sign next to MySQL Connections on the Workbench
+2.  Click the Plus sign next to MySQL Connections on the Workbench.
 
     ![The plus sign next to MySQL Connections is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image32.png "MySQL Connections option")
 
@@ -632,7 +635,7 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
     ![Fields in the Setup New Connection dialog box are set to the previously defined settings.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image84.png "Setup New Connection dialog box")
 
-4.  Once the connection is configured, click the **Test Connection** Button
+4.  Once the connection is configured, click the **Test Connection** Button.
 
     ![Screenshot of the Test Connection button.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image85.png "Test Connection button")
 
@@ -640,7 +643,7 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
     ![A MySQL Workbench success popup displays, informing you that the MySQL connection was successfully made.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image86.png "MySQL Workbench success popup")
 
-6.  Click **OK** to save the connection that you just configured
+6.  Click **OK** to save the connection that you just configured.
 
 7.  The new connection will appear. Double-click it to start a session with the MySQL database server running on the Azure PaaS.
 
@@ -654,31 +657,31 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
     ![Under Management, Data Import/Restore is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image55.png "Management section")
 
-10. On the **Data Import** screen, click the **Import from Self-Contained File**, and select the **c:\\HOL\\mysqlcluster.sql** datafile
+10. On the **Data Import** screen, click the **Import from Self-Contained File**, and select the **c:\\HOL\\mysqlcluster.sql** datafile.
 
     ![On the Data Import page, on the Import from Disk tab, under Import options, Import from Self-Contained File is selected, and the location is C:\\HOL\\mysqlcluster.sql.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image89.png "Data Import page")
 
-11. In the **Default Schema to be Imported To** section, click **New**
+11. In the **Default Schema to be Imported To** section, click **New**.
 
     ![On the Data Import page, on the Import from Disk tab, the New button is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image90.png "Data Import page")
 
-12. In the **Create Schema** dialog, type **osticket** and click **OK**
+12. In the **Create Schema** dialog, type **osticket** and click **OK**.
 
     ![Name of schema to create field, osticket is typed.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image91.png "Name of schema to create field")
 
-13. MySQL Workbench will create the schema (database), on the server for you and select it as the **Default Target Schema** for the restore
+13. MySQL Workbench will create the schema (database), on the server for you and select it as the **Default Target Schema** for the restore.
 
     ![The Default Target Schema field is set to osticket.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image92.png "Default Target Schema field")
 
-14. Click **Start Import** after reviewing the screen
+14. Click **Start Import** after reviewing the screen.
 
     ![On the Data Import page, on the Import from Disk tab, the Start Import button is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image93.png "Data Import page")
 
-15. Once the restore is completed, the following screen will appear
+15. Once the restore is completed, the following screen will appear.
 
     ![On the Data Import page, Import Progress tab, the status shows as import completed.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image94.png "Data Import page")
 
-16. Navigate back to the **Schemas** tab in the **Navigator** pane of the MySQL Workbench, and click the **Refresh** icon
+16. Navigate back to the **Schemas** tab in the **Navigator** pane of the MySQL Workbench, and click the **Refresh** icon.
 
     ![Under Schemas, both osticket and the refresh icon are selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image59.png "Schemas section")
 
@@ -690,31 +693,31 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
     ![On the ost\_user tab, the query displays in the pane above, and results display in the Results Grid below.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image40.png "ost_user query results")
 
-19. Move back to the Azure portal, and click **Overview** for the **Azure Database for MySQL Server** instance you created earlier
+19. Move back to the Azure portal, and click **Overview** for the **Azure Database for MySQL Server** instance you created earlier.
 
     ![On the Azure Database for MySQL server blade, Overview is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image81.png "Azure Database for MySQL server blade")
 
-20. Scroll down and notice now that there are five databases and the addition of the **osticket**
+20. Scroll down and notice now that there are five databases and the addition of the **osticket**.
 
     ![In th eDatabases section, under MySQL databases, the number 5 now displays. Under Name, the following five databases are listed: information\_schema, mysql, osticket, performance\_schema, and sys.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image95.png "Databases section")
 
 ### Task 3: Create the Web App
 
-1.  From the Azure portal, click the **Cloud Shell** icon in the top navigation menu
+1.  From the Azure portal, click the **Cloud Shell** icon in the top navigation menu.
 
     ![Screenshot of the Launch Cloud shell icon.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image20.png "Launch Cloud shell icon")
 
-2.  Execute the following command to create a Linux-based **App Service Plan** for the new web app, using the **SAME** region where you created your **Azure Database for MySQL server** instance in the previous task
+2.  Execute the following command to create a Linux-based **App Service Plan** for the new web app, using the **SAME** region where you created your **Azure Database for MySQL server** instance in the previous task.
 
-```bash
-    az appservice plan create -n OsTicket -g OsTicketPaaSRG --is-linux -l "East US" --sku S1 --number-of-workers 1
-```
+    ```bash
+        az appservice plan create -n OsTicket -g OsTicketPaaSRG --is-linux -l "East US" --sku S1 --number-of-workers 1
+    ```
 
-3.  Execute the following command to create a new web app configured for PHP 7.0 inside of the new App Service Plan. The name of the web app (the value after **-n**) must be unique, so specify some numbers at the end to make it a more unique value.
+3.  Execute the following command to create a new web app configured for PHP 7.0 inside of the new App Service Plan. The name of the web app (the value after **-n**) must be unique, so specify some numbers at the end to make it a more unique value. Example osticketsystem999 or osticketsystem87876.
 
-```
-    az webapp create -n osticketsystem -g OsTicketPaaSRG -p OsTicket -r "php|7.0"
-```
+    ```
+        az webapp create -n osticketsystem -g OsTicketPaaSRG -p OsTicket -r "php|7.0"
+    ```
 
 4.  Once the deployment has completed, open the **OsTicketPaaSRG** resource group. Notice there are now three objects: **MySQL database, Linux App Service Plan** and the **Web App**.
 
@@ -728,7 +731,7 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
 2.  If you click the **URL**, you will get a **Forbidden** error from the server. This is because no application has yet been deployed. 
 
-3.  In the Azure portal in your web app blade, click **Application settings** in the **Settings** menu area
+3.  In the Azure portal in your web app blade, click **Application settings** in the **Settings** menu area.
 
     ![Under Settings, Application settings is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image98.png "Settings section")
 
@@ -740,7 +743,7 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
     ![On the GitHub webpage, a code tab displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image100.png "GitHub webpage")
 
-6.  On this page locate and then click the **Fork** button
+6.  On this page locate and then click the **Fork** button.
 
     ![Screenshot of the Fork button.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image101.png "Fork button")
 
@@ -748,11 +751,11 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
     ![Under Forking opsgility/osticket, a refresh button displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image102.png "Refresh icon")
 
-8.  After the repository is forked to your GitHub account, scroll down and locate the **include** folder and click it
+8.  After the repository is forked to your GitHub account, scroll down and locate the **include** folder and click it.
 
     ![In a list of folders, the Include folder is selected..](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image103.png "List of folders")
 
-9.  Once in the **include** folder, scroll down and locate the file named **ost-config.php**
+9.  Once in the **include** folder, scroll down and locate the file named **ost-config.php**.
 
     ![In a list of files, ost-config.php is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image104.png "list of files")
 
@@ -770,35 +773,35 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
     ![The configuration options in ost-config.php after the edit.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image107.png "Github After window")
 
-12. Once you have updated the text, scroll down, name your commit and click **Commit changes**
+12. Once you have updated the text, scroll down, name your commit and click **Commit changes**.
 
     ![The text field under Commit changes reads, \"Updated MySQL Server Settings.\" The option to Commit directly to the master branch is selected, as is the Commit Changes button at the bottom. ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image108.png "Commit changes section")
 
-13. Move back to the Azure portal and, in the Web App blade, click **Deployment options** in the **Deployment** menu area
+13. Move back to the Azure portal and, in the Web App blade, click **Deployment options** in the **Deployment** menu area.
 
     ![Under Deployment, Deployment options is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image109.png "Deployment section")
 
-14. Click **Choose Source**, *Configure required settings*
+14. Click **Choose Source**, *Configure required settings*.
 
     ![Screenshot of the Choose Source, Configure required settings option.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image110.png "Choose Source option")
 
-15. Click GitHub
+15. Click GitHub.
 
     ![Under Choose source, GitHub is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image111.png "Choose source section")
 
 16. Click **Authorization**. If you have not connected your GitHub account to the Azure portal, follow the prompts.
 
-17. Click **Choose your organization** if your GitHub personal account is not shown
+17. Click **Choose your organization** if your GitHub personal account is not shown.
 
-18. After your authorization settings are configured, click **Choose project**
+18. After your authorization settings are configured, click **Choose project**.
 
     ![Screenshot of the Choose Project, Configure required settings option.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image112.png "Choose project option")
 
-19. Select the **osticket** repo
+19. Select the **osticket** repo.
 
     ![On the Choose project blade, osticket is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image113.png "Choose project blade")
 
-20. Review your selections in the **Deployment Option** blade and then click **OK**
+20. Review your selections in the **Deployment Option** blade and then click **OK**.
 
     ![The Deployment option blade displays, ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image114.png "Deployment option blade")
 
@@ -808,23 +811,23 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
     ![In the App Service blade, a message displays saying that the MySQL Server Settings are now updated.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image116.png "App Service blade")
 
-22. Click back to the **Overview** page, and then click the **URL** for the Web App
+22. Click back to the **Overview** page, and then click the **URL** for the Web App.
 
     ![The Web App URL http://osticketsystem.azurewebsites.net displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image117.png "Web App URL")
 
-23. Immediately, the Web App will load. You should see the Support Center website again
+23. Immediately, the Web App will load. You should see the Support Center website again.
 
     ![The Support Center website displays with two button options: Open a New Ticket, or Check Ticket Status.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image22.png "Support Center webpage")
 
-24. Click the **Sign in** link
+24. Click the **Sign in** link.
 
     ![Screenshot of the Sign in link.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image23.png "Sign in link")
 
-25. Locate **I'm an agent** and click the **sign in here** link
+25. Locate **I'm an agent** and click the **sign in here** link.
 
     ![On the Sign in to Microsoft Cloud Workshop page, next to I\'m an agent, the link to sign in here is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image24.png "Sign in page")
 
-26. At the OsTicket screen, enter the **username** and **password** and click **Log In**
+26. At the OsTicket screen, enter the **username** and **password** and click **Log In**.
 
     a.  Username: ***demouser***
 
@@ -832,7 +835,7 @@ Database=osticket; Data Source={host_name}.mysql.database.azure.com; User Id=dem
 
     ![The osTicket log in webpage displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image25.png "osTicket log in webpage")
 
-27. Once logged into the OsTicket system, click **My Tickets**
+27. Once logged into the OsTicket system, click **My Tickets**.
 
     ![On the osTicket page, tickets tab, My Tickets (4) is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image26.png "osTicket page, tickets tab")
 
