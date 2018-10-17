@@ -41,7 +41,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Requirements
 
-- You must have a working Azure subscription to carry out this hands-on lab step-by-step
+- You must have a working Azure subscription to carry out this hands-on lab step-by-step.
 
 ## Before the hands-on lab
 
@@ -53,11 +53,11 @@ Duration: 30 Minutes
 
 2.  Click on **+NEW**, and in the search box type in **Visual Studio Community 2017 on Windows Server 2016 (x64)** and press enter. Click the Visual Studio Community 2017 image running on Windows Server 2016 and with the latest update.
 
-3.  In the returned search results, click the image name
+3.  In the returned search results, click the image name.
 
     ![In the Everything blade, the search field displays Visual Studio Community 2017 on Windows Server 2016 (x64). Under Results, Visual Studio Community 2017 on Windows Server 2016 (x64) is selected.](images/Setup/image4.png "Everything blade")
 
-4.  In the Marketplace solution blade, at the bottom of the page keep the deployment model set to **Resource Manager**, and click **Create**
+4.  In the Marketplace solution blade, at the bottom of the page keep the deployment model set to **Resource Manager**, and click **Create**.
 
     ![Resource Manager displays in the Select a deployment model field.](images/Setup/image5.png "Select a deployment model field")
 
@@ -75,11 +75,11 @@ Duration: 30 Minutes
 
     -   Resource Group: **OPSLABRG**
 
-    -   Location: **Choose the closest Azure region to you**
+    -   Location: **Choose the closest Azure region to you**.
 
     ![Fields in the Basics blade display with the previously defined settings.](images/Setup/image6.png "Basics blade")
 
-6.  Choose the **DS1\_V2 Standard** or **DS2\_V2** instance size on the Size blade
+6.  Choose the **DS1\_V2 Standard** or **DS2\_V2** instance size on the Size blade.
 
     > **Note**: You may have to click the **View All** link to see the instance sizes.
 
@@ -87,19 +87,19 @@ Duration: 30 Minutes
 
     > **Note**: If the Azure Subscription you are using is [NOT]{.underline} a trial Azure subscription you may want to chose the DS2\_V2 to have more power in this LABMV. If you are using a trial subscription or one that you know has a restriction on the number of cores stick with the DS1\_V2.
 
-7.  Click **Configure required settings** to specify a storage account for your virtual machine if a storage account name is not automatically selected for you
+7.  Click **Configure required settings** to specify a storage account for your virtual machine if a storage account name is not automatically selected for you.
 
     ![In the Settings blade, the Storage account option is selected.](images/Setup/image8.png "Settings blade")
 
-8.  Click **Create New**
+8.  Click **Create New**.
 
     ![Screenshot of the Create new button.](images/Setup/image9.png "Create new button")
 
-9.  Specify a unique name for the storage account (all lower letters and alphanumeric characters) and ensure the green checkmark shows the name is valid
+9.  Specify a unique name for the storage account (all lower letters and alphanumeric characters) and ensure the green checkmark shows the name is valid.
 
     ![Next to the Name field, the Green checkmark icon is selected.](images/Setup/image10.png "Green checkmark icon")
 
-10. Click **OK** to continue
+10. Click **OK** to continue.
 
     ![Screenshot of the OK button.](images/Setup/image11.png "OK button")
 
@@ -111,13 +111,13 @@ Duration: 30 Minutes
 
     ![Screenshot of the Deploying Visual Studio icon.](images/Setup/image13.png "Deploying Visual Studio icon")
 
-**Note**: Please wait for the LABVM to be provisioned prior to moving to the next step.
+>**Note**: Please wait for the LABVM to be provisioned prior to moving to the next step.
 
 13. Move back to the Portal page on your local machine and wait for **LABVM** to show the Status of **Running**. Click **Connect** to establish a new Remote Desktop Session.
 
     ![The Connect button is selected on the Portal page top menu.](images/Setup/image14.png "Portal page top menu")
 
-14. Depending on your remote desktop protocol client and browser configuration you will either be prompted to open an RDP file, or you will need to download it and then open it separately to connect
+14. Depending on your remote desktop protocol client and browser configuration you will either be prompted to open an RDP file, or you will need to download it and then open it separately to connect.
 
 15. Log in with the credentials specified during creation:
 
@@ -137,11 +137,11 @@ Duration: 30 Minutes
 
     ![On the Server Manager menu, Local Server is selected.](images/Setup/image17.png "Server Manager menu")
 
-19. On the right side of the pane, click **On** by **IE Enhanced Security Configuration**
+19. On the right side of the pane, click **On** by **IE Enhanced Security Configuration**.
 
     ![In the Essentials section, IE Enhanced Security Configuration is selected, and set to On.](images/Setup/image18.png "Essentials section")
 
-20. Change to **Off** for Administrators and click **OK**
+20. Change to **Off** for Administrators and click **OK**.
 
     ![In the Internet Explorer Enhanced Security Configuration dialog box, Administrators is set to Off.](images/Setup/image19.png "Internet Explorer Enhanced Security Configuration dialog box")
 
@@ -149,15 +149,15 @@ Duration: 30 Minutes
 
 1.  While logged into **LABVM** via remote desktop, open Internet Explorer and navigate to <https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.10-winx64.msi> this will download an executable. After the download is finished, click **Run** to execute it.
 
-2.  Follow the directions of the installer to complete the installation of MySQL Workbench
+2.  Follow the directions of the installer to complete the installation of MySQL Workbench.
 
-3.  After the installation is complete, **reboot** the machine
+3.  After the installation is complete, **reboot** the machine.
 
 ### Task 3: Download hands-on lab step-by-step attendee files
 
 1.  After the reboot has completed, download the zipped hands-on lab step-by-step attendee files by clicking on this link:  
-https://cloudworkshop.blob.core.windows.net/linux-lift-shift/MCW-linux-lift-shift.zip
+https://cloudworkshop.blob.core.windows.net/linux-lift-shift/MCW-linux-lift-shift.zip.
 
-2.  Extract the downloaded files into the directory **C:\\HOL**
+2.  Extract the downloaded files into the directory **C:\\HOL**.
 
 You should follow all steps provided *before* performing the Hands-on lab.
