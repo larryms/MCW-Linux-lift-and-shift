@@ -452,13 +452,13 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
         -   The KeyVault will be used to create and house the keys, certificates and secrets for the application. This will be used to encrypt the VMs for the database ensuring that the clients data cannot be stolen.
 
-    -   Insure that the designs are built for high availability, cost optimization, performance and using best practices
+    -   Insure that the designs are built for high availability, cost optimization, performance and using best practices.
 
         -   The tiers of the application have been separated allowing for an elastic front end that will be run behind a load balancer. This front is running in VM Scale Sets will auto-scale based on the usage of the site. This is also very cost effective because this tier will only use the amount of compute resources needed. This is also will scale out instead of up which means that it is much more efficient us of the resources purchased.
 
         -   The MySQL cluster is highly available in that if one of the servers goes offline then another will continue to service the clients. Before the application and database where on only one server and thus if the VM experienced any issues, the site was completely down.
 
-    -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues
+    -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues.
 
         -   Azure's OMS service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. From here different solutions will be used as required to provide for support and monitoring. The Software Update Management tools will be used for any VMs and the Security Tools will also be leveraged during Phase I. Scale Sets are not able to be added to Log Analytics, but the diagnostics from the servers will be sent to a storage account which will load that data. As a result, a custom search for the known error message on the webservers will be written. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to start the impacted machine.
 
@@ -520,7 +520,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   The OsTicketVNET and MySQLVNET will be retired after the migration to PaaS.
 
-![Diagram of the Phase 1 that depicts the preferred solution.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image9.png "Phase 2 - Networking preferred solution")
+        ![Diagram of the Phase 1 that depicts the preferred solution.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image9.png "Phase 2 - Networking preferred solution")
 
 ## Checklist of preferred objection handling
 
