@@ -1,4 +1,4 @@
-﻿![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png  "Microsoft Cloud Workshops")
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png  "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
  Linux lift and shift
@@ -17,6 +17,7 @@ Information in this document, including URL and other Internet Web site referenc
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
+
 © 2018 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
@@ -30,20 +31,42 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Overview](#overview)
     - [Requirements](#requirements)
     - [Help references](#help-references)
-    - [Exercise 1: Deploy the on-premises OsTicket VM application](#exercise-1--deploy-the-on-premises-osticket-vm-application)
-        - [Task 1: Deploy the OnPremVM](#task-1--deploy-the-onpremvm)
-        - [Task 2: Export the osticket database](#task-2--export-the-osticket-database)
-    - [Exercise 2: Migrate to Azure IaaS VM Scale Sets and MySQL cluster](#exercise-2--migrate-to-azure-iaas-vm-scale-sets-and-mysql-cluster)
-        - [Task 1: Deploy the MySQL HA Cluster](#task-1--deploy-the-mysql-ha-cluster)
-        - [Task 2: Connect to the MySQL cluster and restore the database](#task-2--connect-to-the-mysql-cluster-and-restore-the-database)
-        - [Task 3: Deploy the Virtual Machine Scale Set for the OsTicket application](#task-3--deploy-the-virtual-machine-scale-set-for-the-osticket-application)
-        - [Task 4: Connect the MySQLVNet to the Scale Sets VNet](#task-4--connect-the-mysqlvnet-to-the-scale-sets-vnet)
-        - [Task 5: Export the osTicket database from the MySQL cluster](#task-5--export-the-osticket-database-from-the-mysql-cluster)
-    - [Exercise 3: Migrate the OsTicket application from Azure IaaS to PaaS](#exercise-3--migrate-the-osticket-application-from-azure-iaas-to-paas)
-        - [Task 1: Create the MySQL Database](#task-1--create-the-mysql-database)
-        - [Task 2: Restore the osticket database to MySQL PaaS](#task-2--restore-the-osticket-database-to-mysql-paas)
-        - [Task 3: Create the Web App](#task-3--create-the-web-app)
-        - [Task 4: Configure the OsTicket Web App](#task-4--configure-the-osticket-web-app)
+    - [Exercise 1: Deploy the on-premises OsTicket VM application](#exercise-1-deploy-the-on-premises-osticket-vm-application)
+        - [Task 1: Deploy the OnPremVM](#task-1-deploy-the-onpremvm)
+            - [Tasks to complete](#tasks-to-complete)
+            - [Exit criteria](#exit-criteria)
+        - [Task 2: Export the osticket database](#task-2-export-the-osticket-database)
+            - [Tasks to complete](#tasks-to-complete-1)
+            - [Exit criteria](#exit-criteria-1)
+    - [Exercise 2: Migrate to Azure IaaS VM Scale Sets and MySQL cluster](#exercise-2-migrate-to-azure-iaas-vm-scale-sets-and-mysql-cluster)
+        - [Task 1: Deploy the MySQL HA Cluster](#task-1-deploy-the-mysql-ha-cluster)
+            - [Tasks to complete](#tasks-to-complete-2)
+            - [Exit criteria](#exit-criteria-2)
+        - [Task 2: Connect to the MySQL cluster and restore the database](#task-2-connect-to-the-mysql-cluster-and-restore-the-database)
+            - [Tasks to complete](#tasks-to-complete-3)
+            - [Exit criteria](#exit-criteria-3)
+        - [Task 3: Deploy the Virtual Machine Scale Set for the OsTicket application](#task-3-deploy-the-virtual-machine-scale-set-for-the-osticket-application)
+            - [Tasks to complete](#tasks-to-complete-4)
+            - [Exit criteria](#exit-criteria-4)
+        - [Task 4: Connect the MySQLVNet to the Scale Sets VNet](#task-4-connect-the-mysqlvnet-to-the-scale-sets-vnet)
+            - [Tasks to complete](#tasks-to-complete-5)
+            - [Exit criteria](#exit-criteria-5)
+        - [Task 5: Export the osTicket database from the MySQL cluster](#task-5-export-the-osticket-database-from-the-mysql-cluster)
+            - [Tasks to complete](#tasks-to-complete-6)
+            - [Exit criteria](#exit-criteria-6)
+    - [Exercise 3: Migrate the OsTicket application from Azure IaaS to PaaS](#exercise-3-migrate-the-osticket-application-from-azure-iaas-to-paas)
+        - [Task 1: Create the MySQL Database](#task-1-create-the-mysql-database)
+            - [Tasks to complete](#tasks-to-complete-7)
+            - [Exit criteria](#exit-criteria-7)
+        - [Task 2: Restore the osticket database to MySQL PaaS](#task-2-restore-the-osticket-database-to-mysql-paas)
+            - [Tasks to complete](#tasks-to-complete-8)
+            - [Exit criteria](#exit-criteria-8)
+        - [Task 3: Create the Web App](#task-3-create-the-web-app)
+            - [Tasks to complete](#tasks-to-complete-9)
+            - [Exit criteria](#exit-criteria-9)
+        - [Task 4: Configure the OsTicket Web App](#task-4-configure-the-osticket-web-app)
+            - [Tasks to complete](#tasks-to-complete-10)
+            - [Exit criteria](#exit-criteria-10)
     - [After the hands-on lab](#after-the-hands-on-lab)
 
 <!-- /TOC -->
@@ -92,9 +115,6 @@ You must have a working Azure subscription to carry out this hands-on lab step-b
 | App Service for Linux | <https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-intro/> |
 | Azure CLI | <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli/> |
 
-
-
-
 ## Exercise 1: Deploy the on-premises OsTicket VM application
 
 Duration: 45 Minutes
@@ -104,6 +124,8 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 ![This Resource group for OnPremVNet includes the previously mentioned products.](images/Hands-onlabunguided-Linuxliftandshiftimages/media/image20.png "Resource group")
 
 ### Task 1: Deploy the OnPremVM
+
+#### Tasks to complete
 
 1.  Using the portal or the Azure Cloud Shell deploy the following template into a resource group named: **OsTicketOnPremRG**: <https://cloudworkshop.blob.core.windows.net/linux-lift-shift/onpremvmdeploy.json>
 
@@ -115,13 +137,15 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 
 3.  Once logged into the OsTicket system click **My Tickets** and click through to one of the tickets. Next, Click the **Users Tab** and notice the user's names that are entered into the system. Feel free to create new tickets or new users to add to your dataset.
 
-*Exit Criteria:*
+#### Exit criteria
 
 -   The OnPremVM has been deployed to Azure
 
 -   A successful connection to the website has been made and there is current data in the application
 
 ### Task 2: Export the osticket database
+
+#### Tasks to complete
 
 1.  Start and connect to the **LABVM** using Remote Desktop. Connect to the MySQL Database using MySQL Workbench.
 
@@ -157,7 +181,7 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 
 **Note**: You will get a version mismatch warning, click **Continue Anyway**.
 
-*Exit Criteria:*
+#### Exit criteria
 
 -   A connection using MySQL Workbench was made and the osticket database has been successfully exported
 
@@ -170,6 +194,8 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 ![The Phase I diagram has two Resource Groups, which are connected by VNet Peering. The first Resource Group is MySQLVNet, and has MySQL, bitnami, and Linux. The second Resource Group is OsticketVNet, and has Linux, Apache, PHP, and Osticket. ](images/Hands-onlabunguided-Linuxliftandshiftimages/media/image2.png "Phase I diagram")
 
 ### Task 1: Deploy the MySQL HA Cluster
+
+#### Tasks to complete
 
 1.  Using the portal or the Azure Cloud Shell deploy the following template into a resource group named: **OsTicketMySQLVMRG**: <https://cloudworkshop.blob.core.windows.net/linux-lift-shift/mysqlhadeploy.json>
 
@@ -187,11 +213,13 @@ Note: It is very important to note change any of these parameters.
 
 1.  Locate the **osticketip** Public IP address and take note of the address
 
-*Exit Criteria:*
+#### Exit criteria
 
 -   The MySQL Cluster was deployed successfully into Azure IaaS and the Public IP address of the master node was noted
 
 ### Task 2: Connect to the MySQL cluster and restore the database
+
+#### Tasks to complete
 
 1.  On the **LABVM**, connect to the master node of the MySQL cluster using MySQL Workbench
 
@@ -225,11 +253,13 @@ Note: It is very important to note change any of these parameters.
 
 5.  Run a query to on the **ost\_user** table to show that the data was restore to the **osticket** schema (database)
 
-*Exit Criteria:*    
+#### Exit criteria    
 
 -   A connection using MySQL Workbench was made and the osticket database has been successfully restored
 
 ### Task 3: Deploy the Virtual Machine Scale Set for the OsTicket application
+
+#### Tasks to complete
 
 1.  Using the portal or the Azure Cloud Shell deploy the following template into a resource group named: **OsTicketVMSSRG**: <https://cloudworkshop.blob.core.windows.net/linux-lift-shift/scalesetdeploy.json>
 
@@ -247,7 +277,7 @@ Note: It is very important to note change any of these parameters.
 
 5.  Enable Scaling Notification to request emails to Administrators and Co-Administrators of this subscription
 
-*Exit Criteria:*
+#### Exit criteria
 
 -   The Virtual Machine Scale Set was deployed with the OsTicket application installed, but when browsing to the application is failed to load with a HTTP/500 error (this is due to lack of connectivity to the MySQL Database)
 
@@ -256,6 +286,8 @@ Note: It is very important to note change any of these parameters.
 -   The Administrators and Co-Administrators of this subscription will receive an email when a scaling event occurs on this Scale Set
 
 ### Task 4: Connect the MySQLVNet to the Scale Sets VNet
+
+#### Tasks to complete
 
 1.  The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the OsTicket application online you will need to create a peering between these VNets.
 
@@ -269,7 +301,7 @@ Note: It is very important to note change any of these parameters.
 
     -   Password: ***demo\@pass123***
 
-*Exit Criteria:*
+#### Exit criteria
 
 -   A connection between the MySQLVNet and the OSTICKETXXVNET was made using VNet peering
 
@@ -277,9 +309,11 @@ Note: It is very important to note change any of these parameters.
 
 ### Task 5: Export the osTicket database from the MySQL cluster
 
+#### Tasks to complete
+
 1.  Next on the **LABVM** use MySQL Workbench to connect to the MySQL cluster and export the osticket database. Make sure to use **Export to Self-Contained File**, and name the file **C:\\HOL\\mysqlcluster.sql**.
 
-*Exit Criteria:*
+#### Exit criteria
 
 -   A connection using MySQL Workbench was made to the MySQL Cluster and the osticket database has been successfully exported
 
@@ -293,6 +327,8 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 ### Task 1: Create the MySQL Database
 
+#### Tasks to complete
+
 1.  Use the Azure portal to create a new Azure Database for MySQL in a new resource group named **OsTicketPaaSRG**. The database server a name must be globally unique in Azure. Enter the name **demouser** and password **demo\@pass123** for the credentials.
 
 2.  Once the database server is deployed take note of the server FQDN and the Server Admin Login Name
@@ -301,7 +337,7 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 4.  Locate the Connection Strings for the Web App and save it to a text file. Make sure to update it based on your configuration if needed
 
-*Exit Criteria:*
+#### Exit criteria
 
 -   An Azure Database for MySQL Server was created
 
@@ -312,6 +348,8 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 -   A firewall rule was created to allow connections from all IP addresses
 
 ### Task 2: Restore the osticket database to MySQL PaaS
+
+#### Tasks to complete
 
 1.  On the **LABVM**, connect to the Azure Database for MySQL server you created
 
@@ -339,7 +377,7 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 6.  Move back to the Azure portal and ensure that the osticket database shows in up in the database list
 
-*Exit Criteria:*
+#### Exit criteria
 
 -   The osticket database that was exported from the MySQL Cluster was restored to the Azure Database for MySQL Server
 
@@ -347,13 +385,17 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 ### Task 3: Create the Web App
 
+#### Tasks to complete
+
 1.  In the Azure portal, create a new Web App in a new resource group named **OsTicketPaaSRG.** Make sure to choose Linux for the OS and select the PHP 7.0 Docker Container.
 
-*Exit Criteria:*
+#### Exit criteria
 
 -   A new Web App was created using the Azure portal. The OS selected was Linux and the Docker Container that was used is PHP 7.0.
 
 ### Task 4: Configure the OsTicket Web App
+
+#### Tasks to complete
 
 1.  Using the Azure portal, locate and browse to the new Web App
 
@@ -381,7 +423,7 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 7.  On the **My Tickets** screen click through to one of the tickets. Once again you see that the data from the IaaS installation of the OsTicket system is preserved which means that you have successfully lifted and shifted the application to Azure PaaS!
 
-*Exit Criteria:*
+#### Exit criteria
 
 -   The Connection String was successfully configured on the Web App. This connects the Web App to the MySQL DB.
 
