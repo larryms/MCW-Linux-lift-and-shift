@@ -520,7 +520,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   The OsTicketVNET and MySQLVNET will be retired after the migration to PaaS.
 
-        ![Diagram of the Phase 1 that depicts the preferred solution.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image9.png "Phase 2 - Networking preferred solution")
+        ![Diagram of the Phase 2 that depicts the preferred solution.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image9.png "Phase 2 - Networking preferred solution")
 
 ## Checklist of preferred objection handling
 
