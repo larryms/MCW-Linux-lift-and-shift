@@ -62,9 +62,9 @@ Fabrikam Global Manufacturing & Operations Corporation, based in Japan, provides
 
 To avoid any impact from restructured support operations, executives decided to migrate on-premises customer support systems into Microsoft Azure. The hope is that running Linux VMs on Azure should enable Fabrikam to lower costs while sustaining or even increasing availability of the application.
 
--   **Phase I:** Lift and shift the application from on-premises to Azure IaaS using an auto scaling Virtual Machine Scale Set and a MySQL cluster with 3 nodes
+-   **Phase I:** Lift and shift the application from on-premises to Azure IaaS using an auto scaling Virtual Machine Scale Set and a MySQL cluster with 3 nodes.
 
--   **Phase II:** Migrate to PaaS using Azure App Services with a Linux Docker Container and Azure Database for MySQL
+-   **Phase II:** Migrate to PaaS using Azure App Services with a Linux Docker Container and Azure Database for MySQL.
 
 **Phase I will result in an environment resembling this diagram:**
 
@@ -222,7 +222,7 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 
     ![Under Schemas, osticket is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image38.png "Schemas ")
 
-12. Locate the **ost\_user** table, **right-click** and then click **Select Rows -- Limit 1000**
+12. Locate the **ost\_user** table, **right-click** and then click **Select Rows -- Limit 1000**. 
 
     ![The ost\_user table is selected. From its menu, Select Rows - Limit 1000 is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image39.png "ost_user table")
 
@@ -278,13 +278,13 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
     > **Note:** The settings that are being deployed as part of the template will be referenced later in the lab.
 
--   OS User Name: **bitnami**
+    -   OS User Name: **bitnami**
 
--   OS Admin Password: **demo\@pass123**
+    -   OS Admin Password: **demo\@pass123**
 
--   App Database: **osticket**
+    -   App Database: **osticket**
 
--   App Password: **demo\@pass123**
+    -   App Password: **demo\@pass123**
 
 4.  This deployment will take about 15 minutes to complete. Wait until it has been deployed before moving on to the next step.
 
@@ -573,9 +573,9 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 4.  Add an open firewall rule to the database by executing the following command. Ensure you replace the server name with the unique value from the previous step.
 
-```
+    ```
     az mysql server firewall-rule create --resource-group OsTicketPaaSRG --server-name osticketsrv01 --name Internet --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
-```
+    ```
 
 5.  Once the MySQL database has been deployed, locate and open it from the **OsTicketPaaSRG** resource group using the Azure Portal.
 
